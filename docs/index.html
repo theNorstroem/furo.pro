@@ -2,7 +2,7 @@
 <html lang="en" dir=>
 
 <head>
-	<meta name="generator" content="Hugo 0.78.2" />
+	<meta name="generator" content="Hugo 0.75.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="フロー Furo provides simply enterprise-flavoured, language-agnostic API development.">
@@ -15,7 +15,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.966d8ceb5ee6376c5ee67e63a985eab55f0bf8c16f7bc27fbd4069e2254956a9.css" integrity="sha256-lm2M617mN2xe5n5jqYXqtV8L&#43;MFve8J/vUBp4iVJVqk=">
-<script defer src="/en.search.min.3522d6778aeabe5acc6bef0de92b43cfdee4f624f4dc128dc21e8d8edd425c48.js" integrity="sha256-NSLWd4rqvlrMa&#43;8N6StDz97k9iT03BKNwh6Njt1CXEg="></script>
+<script defer src="/en.search.min.1e3c36effa1652a30518102a433a27e61bae24eb12219af34506c99e40232a2d.js" integrity="sha256-Hjw27/oWUqMFGBAqQzon5huuJOsSIZrzRQbJnkAjKi0="></script>
 <link rel="alternate" type="application/rss+xml" href="http://furo.pro/index.xml" title="フロー Furo" />
 <!--
 Made with Book Theme
@@ -397,12 +397,15 @@ It comes with multiple sources of truth and generates border-crossing type and s
   
   <div class="flex-even markdown-inner">
     <h2 id="enterprise-ready">Enterprise ready</h2>
-
+<p>Open for integrations, easy to expand, simple to automate, adapts to company processes and is technology independent.
   </div>
   
   <div class="flex-even markdown-inner">
     <h2 id="api-first">API first</h2>
-
+<p>Furo provides tools for quickly prototyping and building your API’s functionality.
+We believe in the API first architecture principle. API First obviously is in conflict with the bad practice of
+publishing API definition and asking for peer review after the service integration has started. With Furo you will
+get early feedback!
   </div>
   
 </div>
@@ -417,12 +420,25 @@ It comes with multiple sources of truth and generates border-crossing type and s
   <div class="flex-even markdown-inner">
     <h2 id="easy-to-write">Easy to write</h2>
 <p>The furo interface definition language (<a href="https://fidl.furo.pro">FIDL</a>) makes it easy to define your types and services.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># This is am example µSpec for a type</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># This is an example µSpec for a type</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;person.Client #A generic client.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">fields</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">id</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;* string:1 #This field is required (*).&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;- string:2 #This one is readonly (-).&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">tags</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;[] string:3 #This one is repeated ([]).&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># This is an example µSpec for a service</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">PersonService</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">service specs for the person api</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">personservice</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">target</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">personservice.proto</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">methods</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">md: &#39;List</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /persons type.Request, type.Response #The List method takes zero or more parameters as input, and returns a type.Response that match the input parameters.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">qp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">filter</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this to define filters for the list.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">order_by</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this to specify the ordering.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">page_size</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;uint32 #Set the size of the pages (elements per page).&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">page</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;uint32 #Use this field to specify the page to display.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">q</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #query string.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div>
   </div>
   
@@ -489,12 +505,15 @@ Protoc --> Publish(publish)
   
   <div class="flex-even markdown-inner">
     <h2 id="browser-integration">Browser integration</h2>
-
+<p>In addition to a set of web components, Furo Web also offers JavaScript modules for integration.
+Any web framework can be connected using the JavaScript integration modules. Or simply integrate your favourite
+web component library such as Carbon Web Components, Spectrum Web Components, Momentum UI or many others.
   </div>
   
   <div class="flex-even markdown-inner">
-    <h2 id="web-components">web-components</h2>
-<p>Based on web standards and future proved. Compliant with any technology of choice. With minimal footprint it includes all enterprise standards, i18n, theming, etc
+    <h2 id="web-components">Web Components</h2>
+<p>Furo Web Components provides an enterprise ready set of web components which play seamlessly with Furo.
+Based on web standards and future proved. Compliant with any technology of choice. With minimal footprint it includes all enterprise standards, i18n, theming, etc
 <a href="/docs/web-components/">read more</a>
   </div>
   
@@ -510,7 +529,7 @@ Protoc --> Publish(publish)
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/255b3d93c64c341944dd2c1bb0dce6550b6e456a" title='Last modified by veith | July 7, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/be26615d14b947a3483b78a2d426d9eff57c3f10" title='Last modified by maltenorstroem | July 7, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>July 7, 2021</span>
     </a>

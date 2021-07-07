@@ -23,7 +23,7 @@ Installation with brew #  brew tap theNorstroem/tap brew install furo  Installat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://furo.pro/docs/web-components/</guid>
-      <description>フロー Furo web #  Data Integration / Adapters  FBP   Material or UI5  Layouter   </description>
+      <description>フロー Furo Web Components #  Data Integration / Adapters  FBP   Material or UI5  Layouter   </description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@ Installation with brew #  brew tap theNorstroem/tap brew install furo  Installat
       <guid>http://furo.pro/docs/configuration/</guid>
       <description>Configuration #  Each spec project must have a .furo configuration file.
 A fictive example of a furo config for a spec project.
-furo:&amp;#34;1.20.0&amp;#34;#Minimal furo versionspecDir:&amp;#34;./specs&amp;#34;specFormat:&amp;#34;yaml&amp;#34;#set to yaml or jsondependencies:#do not write every type/message again and again. Install them.- &amp;#34;git@github.com:theNorstroem/furoBaseSpecs.git v1.11.8&amp;#34;# The importer looks for all **/*.type.spec files recursive The importer looks for all **/*.service.spec files recursivedependenciesDir:dependencies#directory where the dependencies get installed to.muSpec:types:- &amp;#34;./muspecs/**/*types.yaml&amp;#34;- &amp;#34;./muspecs/*types.yaml&amp;#34;#Use this if you do not put your specs in foldersservices:- &amp;#34;.</description>
+furo:&amp;#34;1.20.0&amp;#34;#Minimal furo versionspecDir:&amp;#34;./specs&amp;#34;specFormat:&amp;#34;yaml&amp;#34;#set to yaml or jsondependencies:#do not write every type/message again and again. Install them.- &amp;#34;git@github.com:theNorstroem/furoBaseSpecs.git v1.11.8&amp;#34;# The importer looks for all **/*.type.spec files recursive The importer looks for all **/*.service.spec files recursivedependenciesDir:dependencies #directory where the dependencies get installed to.muSpec:types:- &amp;#34;./muspecs/**/*types.yaml&amp;#34;- &amp;#34;./muspecs/*types.yaml&amp;#34;#Use this if you do not put your specs in foldersservices:- &amp;#34;.</description>
     </item>
     
   </channel>
