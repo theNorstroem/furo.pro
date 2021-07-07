@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Changelog on フロー Furo</title>
+    <link>http://furo.pro/posts/</link>
+    <description>Recent content in Changelog on フロー Furo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://furo.pro/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Release1.24.1</title>
+      <link>http://furo.pro/posts/release1.24.1/</link>
+      <pubDate>Thu, 18 Mar 2021 16:22:22 +0100</pubDate>
+      
+      <guid>http://furo.pro/posts/release1.24.1/</guid>
+      <description>Release 1.24.1 #  features: #  Placeholder attribute in field metas added
+furoBEC #  docker pull thenorstroem/furo-bec:v1.24.1 docker pull thenorstroem/furo-bec:latest</description>
+    </item>
+    
+    <item>
+      <title>Release1.23.0</title>
+      <link>http://furo.pro/posts/release1.23.0/</link>
+      <pubDate>Thu, 21 Jan 2021 22:22:22 +0100</pubDate>
+      
+      <guid>http://furo.pro/posts/release1.23.0/</guid>
+      <description>Release 1.23.0 #  features: #  Using multiline description in type micro spec type def.
+furoBEC #  NOT released yet docker pull thenorstroem/furo-bec:v1.23.0 docker pull thenorstroem/furo-bec:latest
+homebrew #  NOT released yet Formula updated (488ab9b9eb573008e56108a1786e8592f97fe7710f6eaa137ce3bdf0279aae22)</description>
+    </item>
+    
+    <item>
+      <title>Release1.22.3</title>
+      <link>http://furo.pro/posts/release1.22.3/</link>
+      <pubDate>Fri, 11 Dec 2020 00:14:22 +0100</pubDate>
+      
+      <guid>http://furo.pro/posts/release1.22.3/</guid>
+      <description>Release 1.22.3 #  fixes: #  genEsModule oneof from specs included
+furoBEC #  docker pull thenorstroem/furo-bec:v1.22.3 docker pull thenorstroem/furo-bec:latest
+homebrew #  Formula updated (488ab9b9eb573008e56108a1786e8592f97fe7710f6eaa137ce3bdf0279aae22)</description>
+    </item>
+    
+    <item>
+      <title>Release1.22.2</title>
+      <link>http://furo.pro/posts/release1.22.2/</link>
+      <pubDate>Tue, 01 Dec 2020 06:02:22 +0100</pubDate>
+      
+      <guid>http://furo.pro/posts/release1.22.2/</guid>
+      <description>Release 1.22.2 #   commit: eaee2ad6  features: #  muType: multiline type field definitions supported, this makes it easier to write good descriptions.
+muService: multiline method definitions supported, this makes it easier to write good descriptions.
+muService: multiline query param field definitions supported, this makes it easier to write good descriptions.
+muSpec2Spec: flag –overwrite-spec-options to generate the default options based on the .furo config again.
+fixes: #  muSpec2Spec &amp;ndash;overwrite-spec-options null pointer in flow mode.</description>
+    </item>
+    
+    <item>
+      <title>Release1.20.1</title>
+      <link>http://furo.pro/posts/release1.20.1/</link>
+      <pubDate>Mon, 16 Nov 2020 20:02:22 +0100</pubDate>
+      
+      <guid>http://furo.pro/posts/release1.20.1/</guid>
+      <description>Fix release 1.20.1 #   commit: bb70a3fe98b5b722aeeb15eae72a62f74eae20d0  fixes: #  genBundledServiceProto with ordered imports, because it is really disturbing having changes in commits without having changes.
+furoBEC #  docker pull thenorstroem/furo-bec:v1.20.1 docker pull thenorstroem/furo-bec:latest
+homebrew #  Formula udated (4e5d5d388ce7e5729cb19fa04eb8855e1fdb472cd771c17e4750f444a4bb784e)</description>
+    </item>
+    
+    <item>
+      <title>Release1.20</title>
+      <link>http://furo.pro/posts/release1.20.0/</link>
+      <pubDate>Mon, 16 Nov 2020 13:21:59 +0100</pubDate>
+      
+      <guid>http://furo.pro/posts/release1.20.0/</guid>
+      <description>1.20.0 #  We should have done the release notes before, so this note will contain a summary of the older releases too. In the fututre the messages will get smaller then this one.
+semver: 1.20.0 #  date: 2020-11-13T10:12:52+01:00
+changes: #    9bf9e23970a3b68d969fa45b5c886a1469edc539
+note: &#39;feat: genBundledServiceProto to generate all specified services in one file installed services included&#39; breaking: false description: genBundledServiceProto to generate all specified services in one file installed services included    5f2ec401c3e52df09efbb5c444db5e7a274d80b0</description>
+    </item>
+    
+  </channel>
+</rss>
