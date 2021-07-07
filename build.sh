@@ -16,4 +16,4 @@ git add docs/.
 # autocommit
 git commit -m "autocommit publish docs"
 # publish by pushing changes
-#git push
+git push
