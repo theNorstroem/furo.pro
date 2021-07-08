@@ -59,9 +59,8 @@ This config will run &amp;ldquo;cleanTypeProtoDir&amp;rdquo;, muSpec2Spec&amp;qu
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://furo.pro/docs/web-components/</guid>
-      <description>フロー Furo Web Components #  Furo web components are a wide set of components which covers everything you need to write a web application. They consume the same types which are defined with furo.
-Data Integration The transparent data agents are responsible for the communication with the APIs and the adapters for the UI interaction.
- mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph TD UI[UI elements] --- agent[Data Agents] agent-- REST ---API  Programmable HTML Furo FBP is like programmable HTML, no deep javascript knowledge is needed to write an application.</description>
+      <description>フロー Furo Web Components #  Furo Web Components provides an enterprise ready set of web components which play seamlessly with Furo. Based on web standards and future proved. Compliant with any technology of choice. With minimal footprint it includes all enterprise standards, i18n, theming and much more.
+The furo web components are a wide set of components which covers everything you need to write a web application. They consume the same types which are defined with furo.</description>
     </item>
     
     <item>
