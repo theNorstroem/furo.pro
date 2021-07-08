@@ -5,22 +5,20 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="フロー furoBEC #  The furo build essentials container. #  This container contains all tools you need to work with a furo spec project.
- furoBEC on github
 Usage #  Bash mode #  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit  Command mode #  This will run furo with the configured flow build.
 docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build   TIPP: If your furo commands have to access different directories, do not forget to mount them.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="B E C" />
 <meta property="og:description" content="フロー furoBEC #  The furo build essentials container. #  This container contains all tools you need to work with a furo spec project.
- furoBEC on github
 Usage #  Bash mode #  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit  Command mode #  This will run furo with the configured flow build.
 docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build   TIPP: If your furo commands have to access different directories, do not forget to mount them." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://furo.pro/docs/tools/BEC/" />
-<meta property="article:modified_time" content="2021-07-08T14:18:04+02:00" />
+<meta property="article:modified_time" content="2021-07-08T14:26:07+02:00" />
 <title>B E C | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.966d8ceb5ee6376c5ee67e63a985eab55f0bf8c16f7bc27fbd4069e2254956a9.css" integrity="sha256-lm2M617mN2xe5n5jqYXqtV8L&#43;MFve8J/vUBp4iVJVqk=">
-<script defer src="/en.search.min.32047b9075a7e002098802ed0a0de18c32d30905328a758898d2ef1e8c33bf0f.js" integrity="sha256-MgR7kHWn4AIJiALtCg3hjDLTCQUyinWImNLvHowzvw8="></script>
+<script defer src="/en.search.min.8ce60651454684716a479632f2fd64b36476b06f4319e2b07a9271fa2c5a7354.js" integrity="sha256-jOYGUUVGhHFqR5Yy8v1ks2R2sG9DGeKwepJx&#43;ixac1Q="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -427,8 +425,6 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#the-furo-build-essentials-container">#</a>
 </h4>
 <p>This container contains all tools you need to work with a furo spec project.</p>
-<p>
-  <a href="https://github.com/theNorstroem/furoBEC">furoBEC on github</a></p>
 <h2 id="usage">
   Usage
   <a class="anchor" href="#usage">#</a>
@@ -457,19 +453,56 @@ exit
   <a class="anchor" href="#installed-tools">#</a>
 </h2>
 <ul>
-<li>golang</li>
-<li>git</li>
-<li>protoc</li>
-<li>protoc-gen-grpc-gateway (v2)</li>
-<li>protoc-gen-openapiv2</li>
-<li>protoc-gen-go</li>
-<li>protoc-gen-go-grpc</li>
-<li>simple-generator</li>
-<li>furo</li>
-<li>furoc</li>
+<li>
+<p>golang</p>
+</li>
+<li>
+<p>git</p>
+</li>
+<li>
+<p>protoc</p>
+</li>
+<li>
+<p>protoc-gen-grpc-gateway (v2)</p>
+</li>
+<li>
+<p>protoc-gen-openapiv2</p>
+</li>
+<li>
+<p>protoc-gen-go</p>
+</li>
+<li>
+<p>protoc-gen-go-grpc</p>
+</li>
+<li>
+<p>simple-generator</p>
+</li>
+<li>
+<p>furo</p>
+</li>
+<li>
+<p>furoc</p>
+</li>
+<li>
+<p>buf</p>
+</li>
+<li>
+<p>protoc-gen-buf-breaking</p>
+</li>
+<li>
+<p>protoc-gen-buf-lint</p>
+</li>
+<li>
+<p>
+  <a href="https://stedolan.github.io/jq/">jq</a></p>
+</li>
+<li>
+<p>
+  <a href="https://mikefarah.gitbook.io/yq/commands/read">yq</a></p>
+</li>
 </ul>
 <blockquote>
-<p>No furoc generators are installed. Add the needed furoc-gen-XXX to the <code>.furobecrc</code> file. Or build a image based on this one.</p>
+<p>No furoc generators are installed. Add the needed furoc-gen-XXX to the <code>.furobecrc</code> file.</p>
 </blockquote>
 </article>
  
@@ -481,7 +514,7 @@ exit
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/112410f63b3eb767664d1f6394202f6a11fb8652" title='Last modified by veith | July 8, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/0e9715d81997b02bd5752f666decdfc1bd6f700d" title='Last modified by veith | July 8, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>July 8, 2021</span>
     </a>
