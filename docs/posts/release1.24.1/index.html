@@ -5,20 +5,22 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Release 1.24.1 #  features: #  Placeholder attribute in field metas added
-furoBEC #  docker pull thenorstroem/furo-bec:v1.24.1 docker pull thenorstroem/furo-bec:latest">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Release1.24.1" />
-<meta property="og:description" content="Release 1.24.1 #  features: #  Placeholder attribute in field metas added
-furoBEC #  docker pull thenorstroem/furo-bec:v1.24.1 docker pull thenorstroem/furo-bec:latest" />
+<meta name="description" content="Moving to eclipse #  We started to move the many parts of the furo project from theNorstroem to eclipse last month. This forced us to restructure the individual parts of furo. The restructuring definitely brings us advantages and a simpler view of the big picture.
+Migration guide: #  Web related stuff: #  There are no changes to make, all npm packages have the same name.
+API and spec related stuff: #  All you have to do is">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Moving to eclipse" />
+<meta property="og:description" content="Moving to eclipse #  We started to move the many parts of the furo project from theNorstroem to eclipse last month. This forced us to restructure the individual parts of furo. The restructuring definitely brings us advantages and a simpler view of the big picture.
+Migration guide: #  Web related stuff: #  There are no changes to make, all npm packages have the same name.
+API and spec related stuff: #  All you have to do is" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://furo.pro/posts/release1.24.1/" />
-<meta property="article:published_time" content="2021-03-18T16:22:22+01:00" />
-<meta property="article:modified_time" content="2021-07-11T09:52:20+02:00" />
-<title>Release1.24.1 | フロー Furo</title>
+<meta property="article:published_time" content="2021-07-12T21:22:22+01:00" />
+<meta property="article:modified_time" content="2021-07-13T09:28:00+02:00" />
+<title>Moving to eclipse | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.966d8ceb5ee6376c5ee67e63a985eab55f0bf8c16f7bc27fbd4069e2254956a9.css" integrity="sha256-lm2M617mN2xe5n5jqYXqtV8L&#43;MFve8J/vUBp4iVJVqk=">
-<script defer src="/en.search.min.cd00c840371233118898ebffe511cf769408bae256c2ae8258e00552b2c2a911.js" integrity="sha256-zQDIQDcSMxGImOv/5RHPdpQIuuJWwq6CWOAFUrLCqRE="></script>
+<script defer src="/en.search.min.cb0028428579cd0bfcd988b7ee06434ab9ffeb011d17e9236b6a577579a94719.js" integrity="sha256-ywAoQoV5zQv82Yi37gZDSrn/6wEdF&#43;kja2pXdXmpRxk="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -338,7 +340,7 @@ https://github.com/alex-shpak/hugo-book
   
   <li>
     <a href="/posts/" >
-        Changelog
+        Blog
       </a>
   </li>
   
@@ -374,7 +376,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Release1.24.1</strong>
+  <strong>Moving to eclipse</strong>
 
   <label for="toc-control">
     
@@ -389,10 +391,15 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#release-1241">Release 1.24.1</a>
+    <li><a href="#moving-to-eclipse">Moving to eclipse</a>
       <ul>
-        <li><a href="#features">features:</a></li>
-        <li><a href="#furobec">furoBEC</a></li>
+        <li><a href="#migration-guide">Migration guide:</a>
+          <ul>
+            <li><a href="#web-related-stuff">Web related stuff:</a></li>
+            <li><a href="#api-and-spec-related-stuff">API and spec related stuff:</a></li>
+            <li><a href="#custom-generators">Custom generators</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -408,10 +415,10 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
   <h1>
-    <a href="/posts/release1.24.1/">Release1.24.1</a>
+    <a href="/posts/release1.24.1/">Moving to eclipse</a>
   </h1>
   
-  <h5>March 18, 2021</h5>
+  <h5>July 12, 2021</h5>
 
 
 
@@ -420,21 +427,50 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><h1 id="release-1241">
-  Release 1.24.1
-  <a class="anchor" href="#release-1241">#</a>
+  <p><h1 id="moving-to-eclipse">
+  Moving to eclipse
+  <a class="anchor" href="#moving-to-eclipse">#</a>
 </h1>
-<h2 id="features">
-  features:
-  <a class="anchor" href="#features">#</a>
+<p>We started to move the many parts of the furo project from theNorstroem to eclipse last month.
+This forced us to restructure the individual parts of <em>furo</em>.
+The restructuring definitely brings us advantages and a simpler view of the big picture.</p>
+<h2 id="migration-guide">
+  Migration guide:
+  <a class="anchor" href="#migration-guide">#</a>
 </h2>
-<p>Placeholder attribute in field metas added</p>
-<h2 id="furobec">
-  furoBEC
-  <a class="anchor" href="#furobec">#</a>
-</h2>
-<p>docker pull thenorstroem/furo-bec:v1.24.1
-docker pull thenorstroem/furo-bec:latest</p>
+<h3 id="web-related-stuff">
+  Web related stuff:
+  <a class="anchor" href="#web-related-stuff">#</a>
+</h3>
+<p>There are no changes to make, all npm packages have the same name.</p>
+<h3 id="api-and-spec-related-stuff">
+  API and spec related stuff:
+  <a class="anchor" href="#api-and-spec-related-stuff">#</a>
+</h3>
+<p>All you have to do is</p>
+<ul>
+<li>Rename the <code>.spectools</code> file to <code>.furo</code>.</li>
+<li>Replace the word <code>spectools</code> with <code>furo</code> in the renamed file.</li>
+<li>Update the dependency to the <code>furoBaseSpecs</code> (if you have) to at least <code>git@github.com:theNorstroem/furoBaseSpecs.git v1.27.1</code>.</li>
+<li>If you work with BEC, install the latest or at least <code>1.27.3</code> by running <code>docker pull thenorstroem/furo-bec:v1.27.3</code> and you are done.</li>
+<li>If you work with a local installation, update the brew tap and run <code>brew install furo</code> and you are done.</li>
+<li>If you installed furo from the source, checkout <code>github.com/eclipse/eclipsefuro</code>.</li>
+</ul>
+<blockquote class="book-hint info">
+  <strong>Note on nested spces</strong>
+If you have dependenies which are not already switched from spectools to furo, you have to rename the <code>.spectools</code>
+file to <code>.furo</code> in your dependency folder.
+</blockquote>
+
+<h3 id="custom-generators">
+  Custom generators
+  <a class="anchor" href="#custom-generators">#</a>
+</h3>
+<p>If you have built custom generators for <code>furoc</code>,
+change the dependencies for spectools and furoc to at least <code>github.com/eclipse/eclipsefuro v1.27.3</code></p>
+<pre><code>github.com/theNorstroem/furoc  becomes github.com/eclipse/eclipsefuro/furoc
+github.com/theNorstroem/spectools becomes github.com/eclipse/eclipsefuro/furo
+</code></pre>
 </p>
 </article>
  
@@ -446,9 +482,9 @@ docker pull thenorstroem/furo-bec:latest</p>
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/fa280da43bb566c406912830e680b4cf6232ff39" title='Last modified by veith | July 11, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/83034847e43cd83e345f2440c40296dd9c40c8e7" title='Last modified by veith | July 13, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>July 11, 2021</span>
+      <span>July 13, 2021</span>
     </a>
   </div>
 
@@ -476,10 +512,15 @@ docker pull thenorstroem/furo-bec:latest</p>
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#release-1241">Release 1.24.1</a>
+    <li><a href="#moving-to-eclipse">Moving to eclipse</a>
       <ul>
-        <li><a href="#features">features:</a></li>
-        <li><a href="#furobec">furoBEC</a></li>
+        <li><a href="#migration-guide">Migration guide:</a>
+          <ul>
+            <li><a href="#web-related-stuff">Web related stuff:</a></li>
+            <li><a href="#api-and-spec-related-stuff">API and spec related stuff:</a></li>
+            <li><a href="#custom-generators">Custom generators</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
