@@ -190,13 +190,14 @@ dependencies: - &amp;quot;git@github.com:theNorstroem/furoBaseSpecs.git v1.10.9&
     
     <item>
       <title>Moving to eclipse</title>
-      <link>http://furo.pro/posts/release1.24.1/</link>
+      <link>http://furo.pro/posts/movingToEclipse/</link>
       <pubDate>Mon, 12 Jul 2021 21:22:22 +0100</pubDate>
       
-      <guid>http://furo.pro/posts/release1.24.1/</guid>
-      <description>Moving to eclipse #  We started to move the many parts of the furo project from theNorstroem to eclipse last month. This forced us to restructure the individual parts of furo. The restructuring definitely brings us advantages and a simpler view of the big picture.
-Migration guide: #  Web related stuff: #  There are no changes to make, all npm packages have the same name.
-API and spec related stuff: #  All you have to do is</description>
+      <guid>http://furo.pro/posts/movingToEclipse/</guid>
+      <description>We started to move the many parts of the furo project from theNorstroem to eclipse last month.
+This forced us to restructure the individual parts of furo. The restructuring definitely brings us some advantages for the project itself.
+For the consumers, the sharp separation of the involved components, a cleaner naming and improved documentation will give them a better view of the big picture.
+We kept the changes that you have to made as low as possible.</description>
     </item>
     
   </channel>

@@ -5,19 +5,20 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="furo spec2muSpec #  A brief description of your command
-Synopsis #  A longer description that spans multiple lines and likely contains examples and usage of using your command. For example:
-Cobra is a CLI library for Go that empowers applications. This application is a tool to generate the needed files to quickly create a Cobra application.
-furo spec2muSpec [flags] Options #   -d, --delete Delete muSpecs which not exist in Spec -h, --help help for spec2muSpec Options inherited from parent commands #   --config string config file (default is CWD/.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="spec2muSpec" />
-<meta property="og:description" content="furo spec2muSpec #  A brief description of your command
-Synopsis #  A longer description that spans multiple lines and likely contains examples and usage of using your command. For example:
-Cobra is a CLI library for Go that empowers applications. This application is a tool to generate the needed files to quickly create a Cobra application.
-furo spec2muSpec [flags] Options #   -d, --delete Delete muSpecs which not exist in Spec -h, --help help for spec2muSpec Options inherited from parent commands #   --config string config file (default is CWD/." />
+<meta name="description" content="We started to move the many parts of the furo project from theNorstroem to eclipse last month.
+This forced us to restructure the individual parts of furo. The restructuring definitely brings us some advantages for the project itself.
+For the consumers, the sharp separation of the involved components, a cleaner naming and improved documentation will give them a better view of the big picture.
+We kept the changes that you have to made as low as possible.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Moving to eclipse" />
+<meta property="og:description" content="We started to move the many parts of the furo project from theNorstroem to eclipse last month.
+This forced us to restructure the individual parts of furo. The restructuring definitely brings us some advantages for the project itself.
+For the consumers, the sharp separation of the involved components, a cleaner naming and improved documentation will give them a better view of the big picture.
+We kept the changes that you have to made as low as possible." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://furo.pro/docs/commands/furo_spec2muSpec/" />
+<meta property="og:url" content="http://furo.pro/posts/movingToEclipse/" />
+<meta property="article:published_time" content="2021-07-12T21:22:22+01:00" />
 <meta property="article:modified_time" content="2021-07-13T10:58:48+02:00" />
-<title>spec2muSpec | フロー Furo</title>
+<title>Moving to eclipse | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
@@ -113,7 +114,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle" checked />
+    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle"  />
     <label for="section-3fb225060dbc6eb1fda04fb19c520b9e" class="flex justify-between">
       <a href="http://furo.pro/docs/commands/" class="">Commands</a>
       <span>▾</span>
@@ -247,7 +248,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/commands/furo_spec2muSpec/" class=" active">spec2muSpec</a>
+    <a href="http://furo.pro/docs/commands/furo_spec2muSpec/" class="">spec2muSpec</a>
   
 
         </li>
@@ -377,7 +378,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>spec2muSpec</strong>
+  <strong>Moving to eclipse</strong>
 
   <label for="toc-control">
     
@@ -394,11 +395,11 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
-        <li><a href="#furo-spec2muspec">furo spec2muSpec</a>
+        <li><a href="#migration-guide">Migration guide:</a>
           <ul>
-            <li><a href="#synopsis">Synopsis</a></li>
-            <li><a href="#options">Options</a></li>
-            <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
+            <li><a href="#web-related-stuff">Web related stuff:</a></li>
+            <li><a href="#api-and-spec-related-stuff">API and spec related stuff:</a></li>
+            <li><a href="#custom-generators">Custom generators</a></li>
           </ul>
         </li>
       </ul>
@@ -414,36 +415,65 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="furo-spec2muspec">
-  furo spec2muSpec
-  <a class="anchor" href="#furo-spec2muspec">#</a>
+<article class="markdown">
+  <h1>
+    <a href="/posts/movingToEclipse/">Moving to eclipse</a>
+  </h1>
+  
+  <h5>July 12, 2021</h5>
+
+
+
+  
+
+  
+
+
+  <p><p>We started to move the many parts of the furo project from theNorstroem to eclipse last month.</p>
+<p>This forced us to restructure the individual parts of <em>furo</em>.
+The restructuring definitely brings us some advantages for the project itself.</p>
+<p>For the consumers, the sharp separation of the involved components,  a cleaner naming and improved documentation will
+give them a better view of the big picture.</p>
+<p>We kept the changes that you have to made as low as possible.
+Please read in the guide below, what you have to do, to migrate your project.</p>
+<h2 id="migration-guide">
+  Migration guide:
+  <a class="anchor" href="#migration-guide">#</a>
 </h2>
-<p>A brief description of your command</p>
-<h3 id="synopsis">
-  Synopsis
-  <a class="anchor" href="#synopsis">#</a>
+<h3 id="web-related-stuff">
+  Web related stuff:
+  <a class="anchor" href="#web-related-stuff">#</a>
 </h3>
-<p>A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:</p>
-<p>Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.</p>
-<pre><code>furo spec2muSpec [flags]
-</code></pre><h3 id="options">
-  Options
-  <a class="anchor" href="#options">#</a>
+<p>There are no changes to make, all npm packages have the same name.</p>
+<h3 id="api-and-spec-related-stuff">
+  API and spec related stuff:
+  <a class="anchor" href="#api-and-spec-related-stuff">#</a>
 </h3>
-<pre><code>  -d, --delete   Delete muSpecs which not exist in Spec
-  -h, --help     help for spec2muSpec
-</code></pre><h3 id="options-inherited-from-parent-commands">
-  Options inherited from parent commands
-  <a class="anchor" href="#options-inherited-from-parent-commands">#</a>
+<p>All you have to do is</p>
+<ul>
+<li>Rename the <code>.spectools</code> file to <code>.furo</code>.</li>
+<li>Replace the word <code>spectools</code> with <code>furo</code> in the renamed file.</li>
+<li>Update the dependency to the <code>furoBaseSpecs</code> (if you have) to at least <code>git@github.com:theNorstroem/furoBaseSpecs.git v1.27.1</code>.</li>
+<li>If you work with BEC, install the latest or at least <code>1.27.3</code> by running <code>docker pull thenorstroem/furo-bec:v1.27.3</code> and you are done.</li>
+<li>If you work with a local installation, update the brew tap and run <code>brew install furo</code> and you are done.</li>
+<li>If you installed furo from the source, checkout <code>github.com/eclipse/eclipsefuro</code>.</li>
+</ul>
+<blockquote class="book-hint info">
+  <strong>Note on nested spces</strong>
+If you have dependenies which are not already switched from spectools to furo, you have to rename the <code>.spectools</code>
+file to <code>.furo</code> in your dependency folder.
+</blockquote>
+
+<h3 id="custom-generators">
+  Custom generators
+  <a class="anchor" href="#custom-generators">#</a>
 </h3>
-<pre><code>      --config string   config file (default is CWD/.furo.yaml)
-</code></pre><h6 id="auto-generated-by-spf13cobra-on-23-oct-2020">
-  Auto generated by spf13/cobra on 23-Oct-2020
-  <a class="anchor" href="#auto-generated-by-spf13cobra-on-23-oct-2020">#</a>
-</h6>
+<p>If you have built custom generators for <code>furoc</code>,
+change the dependencies for spectools and furoc to at least <code>github.com/eclipse/eclipsefuro v1.27.3</code></p>
+<pre><code>github.com/theNorstroem/furoc  becomes github.com/eclipse/eclipsefuro/furoc
+github.com/theNorstroem/spectools becomes github.com/eclipse/eclipsefuro/furo
+</code></pre>
+</p>
 </article>
  
       
@@ -486,11 +516,11 @@ to quickly create a Cobra application.</p>
   <ul>
     <li>
       <ul>
-        <li><a href="#furo-spec2muspec">furo spec2muSpec</a>
+        <li><a href="#migration-guide">Migration guide:</a>
           <ul>
-            <li><a href="#synopsis">Synopsis</a></li>
-            <li><a href="#options">Options</a></li>
-            <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
+            <li><a href="#web-related-stuff">Web related stuff:</a></li>
+            <li><a href="#api-and-spec-related-stuff">API and spec related stuff:</a></li>
+            <li><a href="#custom-generators">Custom generators</a></li>
           </ul>
         </li>
       </ul>
