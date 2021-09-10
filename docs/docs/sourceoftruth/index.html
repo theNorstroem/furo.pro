@@ -5,10 +5,8 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Source of Truth #  The different specification formats can be used as a source or a sink or both of them, but never use sources as source of the specs.
- mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph LR µSpec -- Spec Spec -- Proto Proto -- µSpec Spec -- µSpec Some transitions will loose information
- Spec --&gt; *  some transitions are destructive
- Proto -&gt; µSpec Spec -&gt; Proto  and some are updating the sinks">
+<meta name="description" content="Source of Truth #  The different specification formats can be used as a source or used a sink (receiver) or can be both of them.
+ mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph LR µSpec -- Spec Spec -- Proto Proto -- µSpec Spec -- µSpec You should choose one source of truth and stick to it when possible. But it is always possible to change your decision.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Source of Truth" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -18,7 +16,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.952be7fcf35805fdb010f5ca8c5701d5f2b0c0b26c9a7b48f429658357a06c9e.js" integrity="sha256-lSvn/PNYBf2wEPXKjFcB1fKwwLJsmntI9Cllg1egbJ4="></script>
+<script defer src="/en.search.min.03eccf2fff4934a479708b1961296abcf8661f01a7e9f31e5bc3eb2faafec238.js" integrity="sha256-A&#43;zPL/9JNKR5cIsZYSlqvPhmHwGn6fMeW8PrL6r&#43;wjg="></script>
 <link rel="alternate" type="application/rss+xml" href="http://furo.pro/docs/sourceoftruth/index.xml" title="フロー Furo" />
 <!--
 Made with Book Theme
@@ -133,6 +131,19 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_init/" class="">init</a>
+  
+
+        </li>
+      
     
       
         <li>
@@ -436,7 +447,7 @@ https://github.com/alex-shpak/hugo-book
   Source of Truth
   <a class="anchor" href="#source-of-truth">#</a>
 </h1>
-<p>The different specification formats can be used as a source or a sink or both of them, but never use sources as source of the specs.</p>
+<p>The different specification formats can be used as a source or used a sink (receiver) or can be both of them.</p>
 
 
 <script src="/mermaid.min.js"></script>
@@ -460,21 +471,7 @@ Proto --> µSpec
 Spec --> µSpec
 </p>
 
-<p>Some transitions will loose information</p>
-<ul>
-<li><code>Spec --&gt; *</code></li>
-</ul>
-<p>some transitions are destructive</p>
-<ul>
-<li><code>Proto -&gt; µSpec</code></li>
-<li><code>Spec -&gt; Proto</code></li>
-</ul>
-<p>and some are updating the sinks</p>
-<ul>
-<li><code>µSpec -&gt; Spec</code></li>
-<li><code>Spec -&gt; µSpec</code></li>
-</ul>
-<p>You should choose <strong>one</strong> source of truth and stick to it when possible. It is always possible to change.</p>
+<p>You should choose <strong>one</strong> source of truth and stick to it when possible. <em>But it is always possible to change your decision.</em></p>
 <h3 id="sources-and-sink">
   Sources AND Sink
   <a class="anchor" href="#sources-and-sink">#</a>
@@ -752,7 +749,7 @@ Proto --> µSpec
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/e3c9adb2b4af8c4ba2ebe193dc3658a971740091" title='Last modified by veith | September 10, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/32be643bee3aa5f89785c2f5ba82611eab0dc683" title='Last modified by veith | September 10, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>September 10, 2021</span>
     </a>

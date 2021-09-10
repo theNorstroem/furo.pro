@@ -5,17 +5,15 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="フロー furoBEC #  The furo build essentials container. #  This container contains all tools you need to work with a furo spec project.
-Usage #  Bash mode #  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit  Command mode #  This will run furo with the configured flow build.
-docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build   TIPP: If your furo commands have to access different directories, do not forget to mount them.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="B E C" />
-<meta property="og:description" content="フロー furoBEC #  The furo build essentials container. #  This container contains all tools you need to work with a furo spec project.
-Usage #  Bash mode #  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit  Command mode #  This will run furo with the configured flow build.
-docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build   TIPP: If your furo commands have to access different directories, do not forget to mount them." />
+<meta name="description" content="furo init #  Initialize a project structure to begin with.
+Synopsis #  The configuration is set up to use µSpecs as source of truth.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="init" />
+<meta property="og:description" content="furo init #  Initialize a project structure to begin with.
+Synopsis #  The configuration is set up to use µSpecs as source of truth." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://furo.pro/docs/tools/BEC/" />
+<meta property="og:url" content="http://furo.pro/docs/commands/furo_init/" />
 <meta property="article:modified_time" content="2021-09-10T13:52:27+02:00" />
-<title>B E C | フロー Furo</title>
+<title>init | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
@@ -124,7 +122,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle"  />
+    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle" checked />
     <label for="section-3fb225060dbc6eb1fda04fb19c520b9e" class="flex justify-between">
       <a href="http://furo.pro/docs/commands/" class="">Commands</a>
       <span>▾</span>
@@ -141,7 +139,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/commands/furo_init/" class="">init</a>
+    <a href="http://furo.pro/docs/commands/furo_init/" class=" active">init</a>
   
 
         </li>
@@ -302,7 +300,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a432bb056edf769c9f15f6893988f152" class="toggle" checked />
+    <input type="checkbox" id="section-a432bb056edf769c9f15f6893988f152" class="toggle"  />
     <label for="section-a432bb056edf769c9f15f6893988f152" class="flex justify-between">
       <a href="http://furo.pro/docs/tools/" class="">Additional Tools</a>
       <span>▾</span>
@@ -319,7 +317,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/tools/BEC/" class=" active">B E C</a>
+    <a href="http://furo.pro/docs/tools/BEC/" class="">B E C</a>
   
 
         </li>
@@ -401,7 +399,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>B E C</strong>
+  <strong>init</strong>
 
   <label for="toc-control">
     
@@ -416,20 +414,13 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#フロー-furobec">フロー furoBEC</a>
+    <li>
       <ul>
-        <li>
+        <li><a href="#furo-init">furo init</a>
           <ul>
-            <li></li>
+            <li><a href="#synopsis">Synopsis</a></li>
           </ul>
         </li>
-        <li><a href="#usage">Usage</a>
-          <ul>
-            <li><a href="#bash-mode">Bash mode</a></li>
-            <li><a href="#command-mode">Command mode</a></li>
-          </ul>
-        </li>
-        <li><a href="#installed-tools">Installed Tools</a></li>
       </ul>
     </li>
   </ul>
@@ -443,94 +434,17 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="フロー-furobec">
-  フロー furoBEC
-  <a class="anchor" href="#%e3%83%95%e3%83%ad%e3%83%bc-furobec">#</a>
-</h1>
-<h4 id="the-furo-build-essentials-container">
-  The furo build essentials container.
-  <a class="anchor" href="#the-furo-build-essentials-container">#</a>
-</h4>
-<p>This container contains all tools you need to work with a furo spec project.</p>
-<h2 id="usage">
-  Usage
-  <a class="anchor" href="#usage">#</a>
+  <article class="markdown"><h2 id="furo-init">
+  furo init
+  <a class="anchor" href="#furo-init">#</a>
 </h2>
-<h3 id="bash-mode">
-  Bash mode
-  <a class="anchor" href="#bash-mode">#</a>
+<p>Initialize a project structure to begin with.</p>
+<h3 id="synopsis">
+  Synopsis
+  <a class="anchor" href="#synopsis">#</a>
 </h3>
-<pre><code>docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec
-# do your stuff
-# type exit to quit
-exit
-</code></pre>
-<h3 id="command-mode">
-  Command mode
-  <a class="anchor" href="#command-mode">#</a>
-</h3>
-<p>This will run furo with the configured flow <em>build</em>.</p>
-<pre><code>docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build
-</code></pre>
-<blockquote>
-<p>TIPP: If your furo commands have to access different directories, do not forget to mount them.</p>
-</blockquote>
-<h2 id="installed-tools">
-  Installed Tools
-  <a class="anchor" href="#installed-tools">#</a>
-</h2>
-<ul>
-<li>
-<p>golang</p>
-</li>
-<li>
-<p>git</p>
-</li>
-<li>
-<p>protoc</p>
-</li>
-<li>
-<p>protoc-gen-grpc-gateway (v2)</p>
-</li>
-<li>
-<p>protoc-gen-openapiv2</p>
-</li>
-<li>
-<p>protoc-gen-go</p>
-</li>
-<li>
-<p>protoc-gen-go-grpc</p>
-</li>
-<li>
-<p>simple-generator</p>
-</li>
-<li>
-<p>furo</p>
-</li>
-<li>
-<p>furoc</p>
-</li>
-<li>
-<p>buf</p>
-</li>
-<li>
-<p>protoc-gen-buf-breaking</p>
-</li>
-<li>
-<p>protoc-gen-buf-lint</p>
-</li>
-<li>
-<p>
-  <a href="https://stedolan.github.io/jq/">jq</a></p>
-</li>
-<li>
-<p>
-  <a href="https://mikefarah.gitbook.io/yq/commands/read">yq</a></p>
-</li>
-</ul>
-<blockquote>
-<p>No furoc generators are installed. Add the needed furoc-gen-XXX to the <code>.furobecrc</code> file.</p>
-</blockquote>
+<p>The configuration is set up to use µSpecs as 
+  <a href="/docs/sourceoftruth/#%c2%b5spec-as-source">source of truth</a>.</p>
 </article>
  
       
@@ -571,20 +485,13 @@ exit
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#フロー-furobec">フロー furoBEC</a>
+    <li>
       <ul>
-        <li>
+        <li><a href="#furo-init">furo init</a>
           <ul>
-            <li></li>
+            <li><a href="#synopsis">Synopsis</a></li>
           </ul>
         </li>
-        <li><a href="#usage">Usage</a>
-          <ul>
-            <li><a href="#bash-mode">Bash mode</a></li>
-            <li><a href="#command-mode">Command mode</a></li>
-          </ul>
-        </li>
-        <li><a href="#installed-tools">Installed Tools</a></li>
       </ul>
     </li>
   </ul>
