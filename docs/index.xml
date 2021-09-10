@@ -39,6 +39,17 @@ Installation with brew #  brew tap theNorstroem/tap brew install furo  Installat
     </item>
     
     <item>
+      <title>Quickstart Guide</title>
+      <link>http://furo.pro/docs/quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://furo.pro/docs/quickstart/</guid>
+      <description>Quickstart Guide #  The easiest way to try out furo is by using furo init with the furo-BEC container. The container brings all the additional tools you need to generate the grpc stubs.
+ If you already have an environment for proto and grpc development, you can install the furo cli localy and use it directly.
+ In this guide we will setup a furo spec project with the furo init command.</description>
+    </item>
+    
+    <item>
       <title>run</title>
       <link>http://furo.pro/docs/commands/furo_run/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -92,7 +103,7 @@ furo muSpec2Spec [flags] Options #   -d, --delete Delete specs which are not in 
       <guid>http://furo.pro/docs/configuration/</guid>
       <description>Configuration #  Each spec project must have a .furo configuration file.
 A fictive example of a furo config for a spec project.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46  furo:&amp;#34;1.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50  furo:&amp;#34;1.</description>
     </item>
     
     <item>

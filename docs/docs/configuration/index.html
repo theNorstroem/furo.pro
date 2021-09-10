@@ -7,19 +7,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Configuration #  Each spec project must have a .furo configuration file.
 A fictive example of a furo config for a spec project.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46  furo:&#34;1.">
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50  furo:&#34;1.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Project Configuration" />
 <meta property="og:description" content="Configuration #  Each spec project must have a .furo configuration file.
 A fictive example of a furo config for a spec project.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46  furo:&#34;1." />
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50  furo:&#34;1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://furo.pro/docs/configuration/" />
-<meta property="article:modified_time" content="2021-07-13T10:58:48+02:00" />
+<meta property="article:modified_time" content="2021-09-10T13:26:45+02:00" />
 <title>Project Configuration | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.680b21a0ec68abbd4d101e748a16859d6ba700b81bbe874ed47fb98b59ff4b37.js" integrity="sha256-aAshoOxoq71NEB50ihaFnWunALgbvodO1H&#43;5i1n/Szc="></script>
+<script defer src="/en.search.min.952be7fcf35805fdb010f5ca8c5701d5f2b0c0b26c9a7b48f429658357a06c9e.js" integrity="sha256-lSvn/PNYBf2wEPXKjFcB1fKwwLJsmntI9Cllg1egbJ4="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -73,6 +73,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="http://furo.pro/docs/installation/" class="">Installation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/quickstart/" class="">Quickstart Guide</a>
   
 
         </li>
@@ -456,54 +469,62 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">furo</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;1.20.0&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Minimal furo version</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">specDir</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./specs&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">specFormat</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;yaml&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#set to yaml or json</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">dependencies</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#do not write every type/message again and again. Install them.</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#d14">&#34;git@github.com:theNorstroem/furoBaseSpecs.git v1.11.8&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The importer looks for all **/*.type.spec files recursive The importer looks for all **/*.service.spec files recursive</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">dependenciesDir</span>:<span style="color:#bbb"> </span>dependencies<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#directory where the dependencies get installed to.</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">muSpec</span>:<span style="color:#bbb"> 
-</span><span style="color:#bbb">  </span><span style="color:#000080">types</span>:<span style="color:#bbb">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">furo</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;1.28.5&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># the minimal version of furo</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">module</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;github.com/yourname/sample-specs&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">version</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;v0.0.1&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># This is the version for your spec project</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">specDir</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./specs&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The spec files are generated to this folder</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">specFormat</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;yaml&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># set to yaml or json</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">dependencies</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>- <span style="color:#d14">&#34;git@github.com:theNorstroem/furoBaseSpecs.git v1.27.1&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The importer looks for all **/*.type.spec files recursive The importer looks for all **/*.service.spec files recursive</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">dependenciesDir</span>:<span style="color:#bbb"> </span>dependencies<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Your installed dependencies from other spec project are saved in this directory</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">muSpec</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">types</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># define a set of globs which matches your type definitions</span><span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/**/*types.yaml&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/*types.yaml&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Use this if you do not put your specs in folders</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">services</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/*types.yaml&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">services</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># define a set of globs which matches your service definitions</span><span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/**/*services.yaml&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/*services.yaml&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Use this if you do not put your specs in folders</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">goPackageBase</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;github.com/yourname/appname-specs/dist/pb/&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#this is used to prefix the go package option</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">javaPackagePrefix</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;com.yourname.something&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">dir</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;muspecs&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/*services.yaml&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">goPackageBase</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;github.com/yourname/sample-specs/dist/pb/&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># this is used to prefix the go package option</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">javaPackagePrefix</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;com.example.tutorial.&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">dir</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;muspecs&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># the folder where you save the µSpecs</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">forceSync</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># This will delete specs which are deleted in muSpec, this is very useful during prototyping</span><span style="color:#bbb">
 </span><span style="color:#bbb"></span><span style="color:#000080">commands</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#camelCase is not allowed, command scripts can only be executed from a flow</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">gen_grpc_gateway</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/grpcgateway/gateway.sh&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">exec_protoc </span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/protoc_command.sh&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">gen_transcoder</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/gprcgateway/generate.sh&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># shell script to generate a half grpc gateway</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">buf_generate</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/buf_generate.sh&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">buf_braking</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/buf_breaking.sh&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">clean_dist </span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/cleanUpDist.sh&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Deletes the dist folder</span><span style="color:#bbb">
 </span><span style="color:#bbb"></span><span style="color:#000080">flows</span>:<span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#000080">default</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#we choose µSpec as source https://fidl.furo.pro/docs/sourceoftruth/#%C2%B5spec-as-source</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- muSpec2Spec<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Updates the specs from the µSpecs</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- genMessageProtos<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Generates the protos from the type specs</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- genServiceProtos<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Generates the protos from the services specs</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- exec_protoc<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Custom script</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- gen_grpc_gateway<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Custom script</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- genEsModule<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Generates specs to use in clients</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">build</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#build config, define the targets here</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- deprecated<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- muSpec2Spec<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- clean_dist<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- checkImports<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- genMessageProtos<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- genServiceProtos<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- buf_generate<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- gen_transcoder<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- genEsModule<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">build</span>:<span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#000080">proto</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080">targetDir</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;dist/protos/&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Hint: add this to your proto include path</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">targetDir</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;dist/protos/&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Hint: add this to your proto include path</span><span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#000080">esModule</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080">targetFile</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;dist/env.js&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#env module for the furo client libs </span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">bundledservice</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080">targetFile</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;dist/allservices/all-services.proto&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080">package</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;allservices&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080">options</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">      </span><span style="color:#000080">go_package</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;github.com/yourname/appname-specs/dist/pb/allservices;allservicespb&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">      </span><span style="color:#000080">java_multiple_files</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb">
-</span><span style="color:#bbb">      </span><span style="color:#000080">java_outer_classname</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;AllServices&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">      </span><span style="color:#000080">java_package</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;com.yourname.something.allservices&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">dist</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># this is for furo install called on other projects, </span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">files</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># enter a list of files and directories which should be installed by other projects</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">targetFile</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;dist/env.js&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The environment file to register in eclipsefuro-web</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">dist</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">files</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># enter a list of files and directories which should be installed by other projects when they install your spec projec</span><span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- dist/protos<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- specs<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- README.md<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- .furo<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">extensions</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Add configurations for your private builders and generators here.</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">gen_transcoder</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">additional_imports</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># if you use any any type, you need to import them for the gateway</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>- github.com/yourname/sample-specs/dist/pb/sample<span style="color:#bbb">
 </span></code></pre></td></tr></table>
 </div>
 </div></article>
@@ -516,9 +537,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/c86b5d89b8f55640385bde6f54a44c29fdfe3a1b" title='Last modified by veith | July 13, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/e3c9adb2b4af8c4ba2ebe193dc3658a971740091" title='Last modified by veith | September 10, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>July 13, 2021</span>
+      <span>September 10, 2021</span>
     </a>
   </div>
 

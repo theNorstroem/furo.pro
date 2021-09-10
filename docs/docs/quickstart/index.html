@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Quickstart Guide #  The easiest way to try out furo is by using furo init with the furo-BEC container. The container brings all the additional tools you need to generate the grpc stubs.
+ If you already have an environment for proto and grpc development, you can install the furo cli localy and use it directly.
+ In this guide we will setup a furo spec project with the furo init command.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Quickstart Guide" />
+<meta property="og:description" content="Quickstart Guide #  The easiest way to try out furo is by using furo init with the furo-BEC container. The container brings all the additional tools you need to generate the grpc stubs.
+ If you already have an environment for proto and grpc development, you can install the furo cli localy and use it directly.
+ In this guide we will setup a furo spec project with the furo init command." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://furo.pro/docs/quickstart/" />
+<meta property="article:modified_time" content="2021-09-10T13:26:45+02:00" />
+<title>Quickstart Guide | フロー Furo</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
+<script defer src="/en.search.min.952be7fcf35805fdb010f5ca8c5701d5f2b0c0b26c9a7b48f429658357a06c9e.js" integrity="sha256-lSvn/PNYBf2wEPXKjFcB1fKwwLJsmntI9Cllg1egbJ4="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <div ></div>
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>フロー Furo</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/installation/" class="">Installation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/quickstart/" class=" active">Quickstart Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/overview/" class="">Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/configuration/" class="">Project Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle"  />
+    <label for="section-3fb225060dbc6eb1fda04fb19c520b9e" class="flex justify-between">
+      <a href="http://furo.pro/docs/commands/" class="">Commands</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_help-command/" class="">help</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_run/" class="">run</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_muSpec2Spec/" class="">muSpec2Spec</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_checkImports/" class="">checkImports</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_exportAsYaml/" class="">exportAsYaml</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_genMessageProtos/" class="">genMessageProtos</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_genServiceProtos/" class="">genServiceProtos</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_genEsModule/" class="">genEsModule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_muSrvSanitize/" class="">muSrvSanitize</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_spec2muSpec/" class="">spec2muSpec</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_install/" class="">install</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a432bb056edf769c9f15f6893988f152" class="toggle"  />
+    <label for="section-a432bb056edf769c9f15f6893988f152" class="flex justify-between">
+      <a href="http://furo.pro/docs/tools/" class="">Additional Tools</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/tools/BEC/" class="">B E C</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/sourceoftruth/" class="">Source of Truth</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/eclipse/eclipsefuro" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Quickstart Guide</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#quickstart-guide">Quickstart Guide</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#steps">Steps</a></li>
+            <li><a href="#project-structure-after-running-furo-init">Project structure after running furo init</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="quickstart-guide">
+  Quickstart Guide
+  <a class="anchor" href="#quickstart-guide">#</a>
+</h1>
+<p>The easiest way to try out furo is by using <code>furo init</code> with the furo-BEC container.
+The container brings all the additional tools you need to generate the grpc stubs.</p>
+<blockquote>
+<p>If you already have an environment for proto and grpc development, you can 
+  <a href="/docs/installation/">install</a> the furo cli
+localy and use it directly.</p>
+</blockquote>
+<p>In this guide we will setup a furo spec project with the <code>furo init</code> command.
+The furo cli will then create the needed files to have a working project with a sample µType and µService definition.</p>
+<h3 id="steps">
+  Steps
+  <a class="anchor" href="#steps">#</a>
+</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#998;font-style:italic"># 1 Create the project folder</span>
+mkdir sample-spec
+
+<span style="color:#998;font-style:italic"># 2 Switch in to the project folder</span>
+<span style="color:#0086b3">cd</span> sample-spec
+
+<span style="color:#998;font-style:italic"># 3 Start the container </span>
+docker run -it --rm -v <span style="color:#d14">`</span><span style="color:#0086b3">pwd</span><span style="color:#d14">`</span>:/specs thenorstroem/furo-bec
+
+<span style="color:#998;font-style:italic"># 4 Run furo init</span>
+furo init
+
+<span style="color:#998;font-style:italic"># 5 Enter your repository name</span>
+github.com/yourname/sample-specs
+
+<span style="color:#998;font-style:italic"># 6 Install the dependencies</span>
+furo install
+
+<span style="color:#998;font-style:italic"># Edit your muspecs and or specs</span>
+
+<span style="color:#998;font-style:italic"># 7 Start the default flow</span>
+furo
+
+<span style="color:#998;font-style:italic"># Commit your changes</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="project-structure-after-running-furo-init">
+  Project structure after running furo init
+  <a class="anchor" href="#project-structure-after-running-furo-init">#</a>
+</h3>
+<p>The project have a</p>
+<ul>
+<li>
+  <a href="/docs/configuration/">.furoc</a> file which contains the project configuration</li>
+<li>muspec folder with some examples</li>
+<li>empty specs folder</li>
+<li>some example scripts to use in your flows</li>
+</ul>
+<p><em>initial project</em></p>
+<pre><code>.
+├── buf.gen.yaml
+├── buf.yaml
+├── go.mod
+├── muspecs
+│   └── sample
+│       ├── Sample.services.yaml
+│       └── sample.types.yaml
+├── scripts
+│   ├── buf_breaking.sh
+│   ├── buf_generate.sh
+│   ├── cleanUpDist.sh
+│   └── gprcgateway
+│       ├── autoregister.go.tpl
+│       └── generate.sh
+└── specs
+
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/e3c9adb2b4af8c4ba2ebe193dc3658a971740091" title='Last modified by veith | September 10, 2021' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>September 10, 2021</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#quickstart-guide">Quickstart Guide</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#steps">Steps</a></li>
+            <li><a href="#project-structure-after-running-furo-init">Project structure after running furo init</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
