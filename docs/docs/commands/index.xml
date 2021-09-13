@@ -59,9 +59,8 @@ Example Config:
       
       <guid>http://furo.pro/docs/commands/furo_muSpec2Spec/</guid>
       <description>furo muSpec2Spec #  Updates or creates the specs with the definitions from the µSpecs.
-Renaming and restructuring your spec folder is ok, furo will always update the correct file.
- if you have set the config option muSpec.forceSync: true in your furo config, the command will always enable the -d option.
- Because the specs have a higher information density then the µSpecs, furo will fill in calculated default values on the first time it creates a spec file.</description>
+Renaming and restructuring your spec folder is ok, furo will always update the correct file. Also a reordering of the fields in your spec, to get nicer protos of for other reasons, is also ok. Furo works with a internal AST and is not interested in order or file names.
+ if you have set the config option muSpec.</description>
     </item>
     
     <item>
@@ -140,10 +139,10 @@ Sanitizing includes at the moment:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://furo.pro/docs/commands/furo_spec2muSpec/</guid>
-      <description>furo spec2muSpec #  A brief description of your command
-Synopsis #  A longer description that spans multiple lines and likely contains examples and usage of using your command. For example:
-Cobra is a CLI library for Go that empowers applications. This application is a tool to generate the needed files to quickly create a Cobra application.
-furo spec2muSpec [flags] Options #   -d, --delete Delete muSpecs which not exist in Spec -h, --help help for spec2muSpec Options inherited from parent commands #   --config string config file (default is CWD/.</description>
+      <description>furo spec2muSpec #  Updates or creates the µSpecs with the definitions from the specs.
+ if you have set the config option muSpec.forceSync: true in your furo config, the command will always enable the -d option.
+ Because the specs have a higher information density then the µSpecs this step will loose information.
+This command is useful if you want to switch your source of truth from spec to µSpec.</description>
     </item>
     
   </channel>

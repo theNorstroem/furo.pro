@@ -5,23 +5,23 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="furo spec2muSpec #  A brief description of your command
-Synopsis #  A longer description that spans multiple lines and likely contains examples and usage of using your command. For example:
-Cobra is a CLI library for Go that empowers applications. This application is a tool to generate the needed files to quickly create a Cobra application.
-furo spec2muSpec [flags] Options #   -d, --delete Delete muSpecs which not exist in Spec -h, --help help for spec2muSpec Options inherited from parent commands #   --config string config file (default is CWD/.">
+<meta name="description" content="furo spec2muSpec #  Updates or creates the µSpecs with the definitions from the specs.
+ if you have set the config option muSpec.forceSync: true in your furo config, the command will always enable the -d option.
+ Because the specs have a higher information density then the µSpecs this step will loose information.
+This command is useful if you want to switch your source of truth from spec to µSpec.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="spec2muSpec" />
-<meta property="og:description" content="furo spec2muSpec #  A brief description of your command
-Synopsis #  A longer description that spans multiple lines and likely contains examples and usage of using your command. For example:
-Cobra is a CLI library for Go that empowers applications. This application is a tool to generate the needed files to quickly create a Cobra application.
-furo spec2muSpec [flags] Options #   -d, --delete Delete muSpecs which not exist in Spec -h, --help help for spec2muSpec Options inherited from parent commands #   --config string config file (default is CWD/." />
+<meta property="og:description" content="furo spec2muSpec #  Updates or creates the µSpecs with the definitions from the specs.
+ if you have set the config option muSpec.forceSync: true in your furo config, the command will always enable the -d option.
+ Because the specs have a higher information density then the µSpecs this step will loose information.
+This command is useful if you want to switch your source of truth from spec to µSpec." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://furo.pro/docs/commands/furo_spec2muSpec/" />
-<meta property="article:modified_time" content="2021-09-13T17:26:29+02:00" />
+<meta property="article:modified_time" content="2021-09-13T17:48:38+02:00" />
 <title>spec2muSpec | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.2a6383f9d7f13772c59b1e76c4c0ddc9cc68e015b798bc4b6b1ed91225aa12d8.js" integrity="sha256-KmOD&#43;dfxN3LFmx52xMDdycxo4BW3mLxLax7ZEiWqEtg="></script>
+<script defer src="/en.search.min.38967a9a0ded376fb27c68bce29bf3baaa771df2c94016c1de5db06655f1e756.js" integrity="sha256-OJZ6mg3tN2&#43;yfGi84pvzuqp3HfLJQBbB3l2wZlXx51Y="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -422,7 +422,6 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#furo-spec2muspec">furo spec2muSpec</a>
           <ul>
-            <li><a href="#synopsis">Synopsis</a></li>
             <li><a href="#options">Options</a></li>
             <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
           </ul>
@@ -444,16 +443,16 @@ https://github.com/alex-shpak/hugo-book
   furo spec2muSpec
   <a class="anchor" href="#furo-spec2muspec">#</a>
 </h2>
-<p>A brief description of your command</p>
-<h3 id="synopsis">
-  Synopsis
-  <a class="anchor" href="#synopsis">#</a>
-</h3>
-<p>A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:</p>
-<p>Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.</p>
+<p>Updates or creates the µSpecs with the definitions from the specs.</p>
+<blockquote>
+<p>if you have set the config option <code>muSpec.forceSync: true</code> in your furo config,
+the command will always enable the <code>-d</code> option.</p>
+</blockquote>
+<p>Because the specs have a higher information density then the µSpecs this step will <em>loose</em> information.</p>
+<p>This command is useful if you want to switch your source of truth from 
+  <a href="/docs/sourceoftruth/#spec-as-source">spec</a> to 
+  <a href="/docs/sourceoftruth/#%c2%b5spec-as-source">µSpec</a>.</p>
+<p>This command is useful if you want to discuss your services and types without having unneeded details.</p>
 <pre><code>furo spec2muSpec [flags]
 </code></pre><h3 id="options">
   Options
@@ -480,7 +479,7 @@ to quickly create a Cobra application.</p>
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/f3b97709bf8b3aa10a41c7367c48fdb94a03e086" title='Last modified by veith | September 13, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/32950d24df9d5a504f3324f58e1153b7a0f49004" title='Last modified by veith | September 13, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>September 13, 2021</span>
     </a>
@@ -514,7 +513,6 @@ to quickly create a Cobra application.</p>
       <ul>
         <li><a href="#furo-spec2muspec">furo spec2muSpec</a>
           <ul>
-            <li><a href="#synopsis">Synopsis</a></li>
             <li><a href="#options">Options</a></li>
             <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
           </ul>
