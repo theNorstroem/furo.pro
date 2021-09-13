@@ -24,8 +24,7 @@ Installation with brew #  brew tap theNorstroem/tap brew install furo  Installat
       
       <guid>http://furo.pro/docs/quickstart/</guid>
       <description>Quickstart Guide #  The easiest way to try out furo is by using furo init with the furo-BEC container. The container brings all the additional tools you need to generate the grpc stubs.
- If you already have an environment for proto and grpc development, you can install the furo cli localy and use it directly.
- In this guide we will setup a furo spec project with the furo init command.</description>
+In this guide we will setup a furo spec project with the furo init command. The furo cli will then create the needed files to have a working project with a sample µType and µService definition.</description>
     </item>
     
     <item>

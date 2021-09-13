@@ -6,20 +6,18 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Quickstart Guide #  The easiest way to try out furo is by using furo init with the furo-BEC container. The container brings all the additional tools you need to generate the grpc stubs.
- If you already have an environment for proto and grpc development, you can install the furo cli localy and use it directly.
- In this guide we will setup a furo spec project with the furo init command.">
+In this guide we will setup a furo spec project with the furo init command. The furo cli will then create the needed files to have a working project with a sample µType and µService definition.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Quickstart Guide" />
 <meta property="og:description" content="Quickstart Guide #  The easiest way to try out furo is by using furo init with the furo-BEC container. The container brings all the additional tools you need to generate the grpc stubs.
- If you already have an environment for proto and grpc development, you can install the furo cli localy and use it directly.
- In this guide we will setup a furo spec project with the furo init command." />
+In this guide we will setup a furo spec project with the furo init command. The furo cli will then create the needed files to have a working project with a sample µType and µService definition." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://furo.pro/docs/quickstart/" />
-<meta property="article:modified_time" content="2021-09-10T13:52:27+02:00" />
+<meta property="article:modified_time" content="2021-09-13T10:52:05+02:00" />
 <title>Quickstart Guide | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.03eccf2fff4934a479708b1961296abcf8661f01a7e9f31e5bc3eb2faafec238.js" integrity="sha256-A&#43;zPL/9JNKR5cIsZYSlqvPhmHwGn6fMeW8PrL6r&#43;wjg="></script>
+<script defer src="/en.search.min.a9342a712ff5c749ef9ebeb57da0de726d6af239cd53e88b2c1c9baf39c5ba27.js" integrity="sha256-qTQqcS/1x0nvnr61faDecm1q8jnNU&#43;iLLBybrznFuic="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -420,7 +418,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li>
           <ul>
-            <li><a href="#steps">Steps</a></li>
+            <li><a href="#steps-to-setup-a-spec-project">Steps to setup a spec project.</a></li>
             <li><a href="#project-structure-after-running-furo-init">Project structure after running furo init</a></li>
           </ul>
         </li>
@@ -443,16 +441,11 @@ https://github.com/alex-shpak/hugo-book
 </h1>
 <p>The easiest way to try out furo is by using <code>furo init</code> with the furo-BEC container.
 The container brings all the additional tools you need to generate the grpc stubs.</p>
-<blockquote>
-<p>If you already have an environment for proto and grpc development, you can 
-  <a href="/docs/installation/">install</a> the furo cli
-localy and use it directly.</p>
-</blockquote>
 <p>In this guide we will setup a furo spec project with the <code>furo init</code> command.
 The furo cli will then create the needed files to have a working project with a sample µType and µService definition.</p>
-<h3 id="steps">
-  Steps
-  <a class="anchor" href="#steps">#</a>
+<h3 id="steps-to-setup-a-spec-project">
+  Steps to setup a spec project.
+  <a class="anchor" href="#steps-to-setup-a-spec-project">#</a>
 </h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -497,18 +490,67 @@ furo init
 <span style="color:#998;font-style:italic"># 5 Enter your repository name</span>
 github.com/yourname/sample-specs
 
-<span style="color:#998;font-style:italic"># 6 Install the dependencies</span>
+<span style="color:#998;font-style:italic"># 6 Install the dependencies to other spec projects</span>
 furo install
 
-<span style="color:#998;font-style:italic"># Edit your muspecs and or specs</span>
+<span style="color:#998;font-style:italic"># 7 Edit your muspecs and or specs</span>
 
-<span style="color:#998;font-style:italic"># 7 Start the default flow</span>
+<span style="color:#998;font-style:italic"># 8 Start the default flow</span>
 furo
 
 <span style="color:#998;font-style:italic"># Commit your changes</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="project-structure-after-running-furo-init">
+</div><h4 id="step-1">
+  Step 1
+  <a class="anchor" href="#step-1">#</a>
+</h4>
+<p>This folder must be under version control with git to make your specs installable by other spec projects.</p>
+<h4 id="step-3-start-the-container">
+  Step 3 Start the container
+  <a class="anchor" href="#step-3-start-the-container">#</a>
+</h4>
+<p>If you already have an environment for proto and grpc development, you can 
+  <a href="/docs/installation/">install</a> and use the furo cli
+and all the other required commands locally. The 
+  <a href="/docs/tools/BEC/">furo-BEC</a> comes with a set of needed or useful tools.</p>
+<h4 id="step-4--5-run-furo-init">
+  Step 4 + 5 Run furo init
+  <a class="anchor" href="#step-4--5-run-furo-init">#</a>
+</h4>
+<p>This command will create a 
+  <a href="/#project-structure-after-running-furo-init">project structure</a> with good default settings to begin with.
+All you have to enter is the repository name for your project.</p>
+<blockquote>
+<p>If there is already a <code>.furo</code> file in the folder, the init command will abort.</p>
+</blockquote>
+<h4 id="step-6-install-the-dependencies-to-other-spec-projects">
+  Step 6 Install the dependencies to other spec projects
+  <a class="anchor" href="#step-6-install-the-dependencies-to-other-spec-projects">#</a>
+</h4>
+<p>A spec project can use definitions from other spec projects. The created example will use the FuroBaseSpecs which comes with a lot of
+additional types to use (the google WellKnownTypes , google.protobuf.Any and many more).</p>
+<h4 id="step-8-start-the-default-flow">
+  Step 8 Start the default flow
+  <a class="anchor" href="#step-8-start-the-default-flow">#</a>
+</h4>
+<p>By running <code>furo</code> the configured default flow will be executed. This command is similar to 
+  <a href="/docs/commands/furo_run/"><code>furo run default</code></a>.</p>
+<p>The example is configured to do the following:</p>
+<ul>
+<li><code>deprecated</code> : Check for used types which are declared as deprecated.</li>
+<li><code>muSpec2Spec</code> : Create / Update the specs using the muSpecs as input.</li>
+<li><code>clean_dist</code> : Configured command which starts a script to delete the dist folder.</li>
+<li><code>checkImports</code> : Check for types which are not imported, adds the import when it can resolve it.</li>
+<li><code>genMessageProtos</code> : Create the protos for the messages.</li>
+<li><code>genServiceProtos</code> : Create the protos for the services.</li>
+<li><code>buf_generate</code> : Configured command which starts the buf generator.</li>
+<li><code>gen_transcoder</code> : Configured command which produces a go package with a 
+  <a href="https://grpc-ecosystem.github.io/grpc-gateway/">grpc-gateway</a> server mux.</li>
+<li><code>genEsModule</code> : Generates a es module with the specs which is used by 
+  <a href="/docs/web-components/">eclipsefuro-web</a>.</li>
+</ul>
+<h3 id="project-structure-after-running-furo-init">
   Project structure after running furo init
   <a class="anchor" href="#project-structure-after-running-furo-init">#</a>
 </h3>
@@ -548,9 +590,9 @@ furo
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/32be643bee3aa5f89785c2f5ba82611eab0dc683" title='Last modified by veith | September 10, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/7544faab01272d631915e2f9c9fce8f0f7e7a403" title='Last modified by Veith Zäch | September 13, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>September 10, 2021</span>
+      <span>September 13, 2021</span>
     </a>
   </div>
 
@@ -582,7 +624,7 @@ furo
       <ul>
         <li>
           <ul>
-            <li><a href="#steps">Steps</a></li>
+            <li><a href="#steps-to-setup-a-spec-project">Steps to setup a spec project.</a></li>
             <li><a href="#project-structure-after-running-furo-init">Project structure after running furo init</a></li>
           </ul>
         </li>

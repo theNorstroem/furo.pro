@@ -35,10 +35,10 @@ furo help [command] [flags] Options #   -h, --help help for help Options inherit
       <guid>http://furo.pro/docs/commands/furo_run/</guid>
       <description>furo run #  Runs a configured flow.
 Synopsis #  Runs a configured flow of furo commands.
-To configure a flow of commands just add a &amp;ldquo;flow&amp;rdquo; in the flows section of your .furo config. A flow is just a list of commands which gets executed in order
+A flow is a list of custom commands or furo run commands which are executed.
+To configure a custom command, add them to the commands section of the .furo config file.
 Example Config:
-[.furo] commands: publish_npm: &amp;quot;./scripts/test.sh&amp;quot; flows: type: - cleanTypeProtoDir - muSpec2Spec - TypeSpec2Proto - publish_npm  Command:
-This config will run &amp;ldquo;cleanTypeProtoDir&amp;rdquo;, muSpec2Spec&amp;quot;&amp;quot; and &amp;ldquo;TypeSpec2Proto&amp;rdquo; in sequence and calling the command publish_npm</description>
+1 2 3 4 5 6 7 8 9 10  commands:publish_npm:&amp;#34;./scripts/test.sh&amp;#34;flows:default:- muSpec2Spec- publish_npmpublish:- publish_npm  Tipp: If you need the types and services in your command, just call furo again.</description>
     </item>
     
     <item>
