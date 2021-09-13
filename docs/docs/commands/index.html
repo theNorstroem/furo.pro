@@ -5,9 +5,8 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="furo #  The furo spec toolkit 1.21.2
-Synopsis #  Furo contains helpful generators, converters, sanitizer for the furo specs. Read more about the single commands in the see also section below.
-Calling furo without any arguments and flags will run the flow runner with the default flow. Modify your default flow in the .furo config file to your needs. You can set any of the sub commands as default.">
+<meta name="description" content="Furo commands #  Calling furo without any arguments and flags will run the flow runner with the default flow.
+Options #   --config string config file (default is CWD/.furo) -h, --help help for furo --version shows the version number of the current installation SEE ALSO #    furo init	- Initializes a furo spec project  furo checkImports	- Checks and correct the imports  furo exportAsYaml	- Exports all specs and the current config in one yaml file to stdout  furo genEsModule	- generate es6 spec module  furo genMessageProtos	- Generate the message protos from the type specs.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Commands" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -17,7 +16,7 @@ Calling furo without any arguments and flags will run the flow runner with the d
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.09fabda945f2ad14cf6f84dbfe90f32aa5e4666036d849007df5842cd3ea16a4.js" integrity="sha256-Cfq9qUXyrRTPb4Tb/pDzKqXkZmA22EkAffWELNPqFqQ="></script>
+<script defer src="/en.search.min.2a6383f9d7f13772c59b1e76c4c0ddc9cc68e015b798bc4b6b1ed91225aa12d8.js" integrity="sha256-KmOD&#43;dfxN3LFmx52xMDdycxo4BW3mLxLax7ZEiWqEtg="></script>
 <link rel="alternate" type="application/rss+xml" href="http://furo.pro/docs/commands/index.xml" title="フロー Furo" />
 <!--
 Made with Book Theme
@@ -166,6 +165,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="http://furo.pro/docs/commands/furo_install/" class="">install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="http://furo.pro/docs/commands/furo_run/" class="">run</a>
   
 
@@ -271,19 +283,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="http://furo.pro/docs/commands/furo_spec2muSpec/" class="">spec2muSpec</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="http://furo.pro/docs/commands/furo_install/" class="">install</a>
   
 
         </li>
@@ -417,9 +416,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
-        <li><a href="#furo">furo</a>
+        <li><a href="#furo-commands">Furo commands</a>
           <ul>
-            <li><a href="#synopsis">Synopsis</a></li>
             <li><a href="#options">Options</a></li>
             <li><a href="#see-also">SEE ALSO</a></li>
           </ul>
@@ -437,35 +435,25 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="furo">
-  furo
-  <a class="anchor" href="#furo">#</a>
+  <article class="markdown"><h2 id="furo-commands">
+  Furo commands
+  <a class="anchor" href="#furo-commands">#</a>
 </h2>
-<p>The furo spec toolkit 1.21.2</p>
-<h3 id="synopsis">
-  Synopsis
-  <a class="anchor" href="#synopsis">#</a>
-</h3>
-<p>Furo contains helpful generators, converters, sanitizer for the furo specs.
-Read more about the single commands in the see also section below.</p>
-<p>Calling furo without any arguments and flags will run the flow runner with the default flow.
-Modify your default flow in the .furo config file to your needs. You can set any of the sub commands as default.</p>
-<blockquote>
-<p>Note: Environment variables are prefixed with <strong>FST</strong>.</p>
-<p>To set the specformat with the environment variable use <strong>FST_SPECFORMAT=value</strong></p>
-</blockquote>
-<pre><code>furo [flags]
-</code></pre><h3 id="options">
+<p>Calling furo without any arguments and flags will run the flow runner with the default flow.</p>
+<h3 id="options">
   Options
   <a class="anchor" href="#options">#</a>
 </h3>
-<pre><code>      --config string   config file (default is CWD/.furo.yaml)
+<pre><code>      --config string   config file (default is CWD/.furo)
   -h, --help            help for furo
+      --version         shows the version number of the current installation
 </code></pre><h3 id="see-also">
   SEE ALSO
   <a class="anchor" href="#see-also">#</a>
 </h3>
 <ul>
+<li>
+  <a href="/docs/commands/furo_init/">furo init</a>	 - Initializes a furo spec project</li>
 <li>
   <a href="/docs/commands/furo_checkImports/">furo checkImports</a>	 - Checks and correct the imports</li>
 <li>
@@ -501,7 +489,7 @@ Modify your default flow in the .furo config file to your needs. You can set any
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/7236482c9cfde1c6419749872da832df2f7cbc42" title='Last modified by veith | September 13, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/f3b97709bf8b3aa10a41c7367c48fdb94a03e086" title='Last modified by veith | September 13, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>September 13, 2021</span>
     </a>
@@ -533,9 +521,8 @@ Modify your default flow in the .furo config file to your needs. You can set any
   <ul>
     <li>
       <ul>
-        <li><a href="#furo">furo</a>
+        <li><a href="#furo-commands">Furo commands</a>
           <ul>
-            <li><a href="#synopsis">Synopsis</a></li>
             <li><a href="#options">Options</a></li>
             <li><a href="#see-also">SEE ALSO</a></li>
           </ul>

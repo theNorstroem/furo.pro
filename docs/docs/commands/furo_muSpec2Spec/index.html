@@ -5,23 +5,23 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="furo muSpec2Spec #  Updates the type specs with the definitions from the type µSpecs.
-Synopsis #  The converter will update your type specs and also delete specs and fields if they are not in the µSpec file anymore.
-Do not forget to set your µSpec folder in the .furo config.
-furo muSpec2Spec [flags] Options #   -d, --delete Delete specs which are not in muTypes -h, --help help for muSpec2Spec --overwrite-spec-options Overwrite the proto options section in the spec files Options inherited from parent commands #   --config string config file (default is CWD/.">
+<meta name="description" content="furo muSpec2Spec #  Updates or creates the specs with the definitions from the µSpecs.
+Renaming and restructuring your spec folder is ok, furo will always update the correct file.
+ if you have set the config option muSpec.forceSync: true in your furo config, the command will always enable the -d option.
+ Because the specs have a higher information density then the µSpecs, furo will fill in calculated default values on the first time it creates a spec file.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="muSpec2Spec" />
-<meta property="og:description" content="furo muSpec2Spec #  Updates the type specs with the definitions from the type µSpecs.
-Synopsis #  The converter will update your type specs and also delete specs and fields if they are not in the µSpec file anymore.
-Do not forget to set your µSpec folder in the .furo config.
-furo muSpec2Spec [flags] Options #   -d, --delete Delete specs which are not in muTypes -h, --help help for muSpec2Spec --overwrite-spec-options Overwrite the proto options section in the spec files Options inherited from parent commands #   --config string config file (default is CWD/." />
+<meta property="og:description" content="furo muSpec2Spec #  Updates or creates the specs with the definitions from the µSpecs.
+Renaming and restructuring your spec folder is ok, furo will always update the correct file.
+ if you have set the config option muSpec.forceSync: true in your furo config, the command will always enable the -d option.
+ Because the specs have a higher information density then the µSpecs, furo will fill in calculated default values on the first time it creates a spec file." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://furo.pro/docs/commands/furo_muSpec2Spec/" />
-<meta property="article:modified_time" content="2021-09-13T10:59:30+02:00" />
+<meta property="article:modified_time" content="2021-09-13T17:26:29+02:00" />
 <title>muSpec2Spec | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.09fabda945f2ad14cf6f84dbfe90f32aa5e4666036d849007df5842cd3ea16a4.js" integrity="sha256-Cfq9qUXyrRTPb4Tb/pDzKqXkZmA22EkAffWELNPqFqQ="></script>
+<script defer src="/en.search.min.2a6383f9d7f13772c59b1e76c4c0ddc9cc68e015b798bc4b6b1ed91225aa12d8.js" integrity="sha256-KmOD&#43;dfxN3LFmx52xMDdycxo4BW3mLxLax7ZEiWqEtg="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -169,6 +169,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="http://furo.pro/docs/commands/furo_install/" class="">install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="http://furo.pro/docs/commands/furo_run/" class="">run</a>
   
 
@@ -274,19 +287,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="http://furo.pro/docs/commands/furo_spec2muSpec/" class="">spec2muSpec</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="http://furo.pro/docs/commands/furo_install/" class="">install</a>
   
 
         </li>
@@ -422,7 +422,6 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#furo-muspec2spec">furo muSpec2Spec</a>
           <ul>
-            <li><a href="#synopsis">Synopsis</a></li>
             <li><a href="#options">Options</a></li>
             <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
           </ul>
@@ -444,19 +443,19 @@ https://github.com/alex-shpak/hugo-book
   furo muSpec2Spec
   <a class="anchor" href="#furo-muspec2spec">#</a>
 </h2>
-<p>Updates the type specs with the definitions from the type µSpecs.</p>
-<h3 id="synopsis">
-  Synopsis
-  <a class="anchor" href="#synopsis">#</a>
-</h3>
-<p>The converter will update your type specs and also delete specs and fields if they are not in the µSpec file anymore.</p>
-<p>Do not forget to set your µSpec folder in the .furo config.</p>
-<pre><code>furo muSpec2Spec [flags]
-</code></pre><h3 id="options">
+<p>Updates or creates the specs with the definitions from the µSpecs.</p>
+<p>Renaming and restructuring your spec folder is ok, furo will always update the correct file.</p>
+<blockquote>
+<p>if you have set the config option <code>muSpec.forceSync: true</code> in your furo config,
+the command will always enable the <code>-d</code> option.</p>
+</blockquote>
+<p>Because the specs have a higher information density then the µSpecs, furo will fill in calculated default
+values on the first time it creates a spec file. Later calls of this command will not touch the prefilled fields of the spec.</p>
+<h3 id="options">
   Options
   <a class="anchor" href="#options">#</a>
 </h3>
-<pre><code>  -d, --delete   Delete specs which are not in muTypes
+<pre><code>  -d, --delete   Delete specs which are not defined in muspecs
   -h, --help     help for muSpec2Spec
       --overwrite-spec-options   Overwrite the proto options section in the spec files
 </code></pre><h3 id="options-inherited-from-parent-commands">
@@ -464,11 +463,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#options-inherited-from-parent-commands">#</a>
 </h3>
 <pre><code>      --config string   config file (default is CWD/.furo)
-</code></pre><h6 id="auto-generated-by-spf13cobra-on-24-nov-2020">
-  Auto generated by spf13/cobra on 24-Nov-2020
-  <a class="anchor" href="#auto-generated-by-spf13cobra-on-24-nov-2020">#</a>
-</h6>
-</article>
+</code></pre></article>
  
       
 
@@ -478,7 +473,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/7236482c9cfde1c6419749872da832df2f7cbc42" title='Last modified by veith | September 13, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/f3b97709bf8b3aa10a41c7367c48fdb94a03e086" title='Last modified by veith | September 13, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>September 13, 2021</span>
     </a>
@@ -512,7 +507,6 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#furo-muspec2spec">furo muSpec2Spec</a>
           <ul>
-            <li><a href="#synopsis">Synopsis</a></li>
             <li><a href="#options">Options</a></li>
             <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
           </ul>
