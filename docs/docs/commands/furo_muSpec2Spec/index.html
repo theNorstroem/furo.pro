@@ -7,19 +7,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="furo muSpec2Spec #  Updates or creates the specs with the definitions from the µSpecs.
 Renaming and restructuring your spec folder is ok, furo will always update the correct file. Also a reordering of the fields in your spec, to get nicer protos of for other reasons, is also ok. Furo works with a internal AST and is not interested in order or file names.
- if you have set the config option muSpec.">
+Attention: if you have set the config option muSpec.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="muSpec2Spec" />
 <meta property="og:description" content="furo muSpec2Spec #  Updates or creates the specs with the definitions from the µSpecs.
 Renaming and restructuring your spec folder is ok, furo will always update the correct file. Also a reordering of the fields in your spec, to get nicer protos of for other reasons, is also ok. Furo works with a internal AST and is not interested in order or file names.
- if you have set the config option muSpec." />
+Attention: if you have set the config option muSpec." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://furo.pro/docs/commands/furo_muSpec2Spec/" />
-<meta property="article:modified_time" content="2021-09-13T17:48:38+02:00" />
+<meta property="article:modified_time" content="2021-09-14T14:57:22+02:00" />
 <title>muSpec2Spec | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.38967a9a0ded376fb27c68bce29bf3baaa771df2c94016c1de5db06655f1e756.js" integrity="sha256-OJZ6mg3tN2&#43;yfGi84pvzuqp3HfLJQBbB3l2wZlXx51Y="></script>
+<script defer src="/en.search.min.c5a7b8e2c02456db1ac937de9b42e733c8becdc995696afd53227e588f719c63.js" integrity="sha256-xae44sAkVtsayTfem0LnM8i&#43;zcmVaWr9UyJ&#43;WI9xnGM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -420,6 +420,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#furo-muspec2spec">furo muSpec2Spec</a>
           <ul>
+            <li><a href="#config">Config</a></li>
             <li><a href="#options">Options</a></li>
             <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
           </ul>
@@ -444,13 +445,51 @@ https://github.com/alex-shpak/hugo-book
 <p>Updates or creates the specs with the definitions from the µSpecs.</p>
 <p>Renaming and restructuring your spec folder is ok, furo will always update the correct file. Also a reordering of the fields in your spec,
 to get nicer protos of for other reasons, is also ok. Furo works with a internal AST and is not interested in order or file names.</p>
-<blockquote>
-<p>if you have set the config option <code>muSpec.forceSync: true</code> in your furo config,
-the command will always enable the <code>-d</code> option.</p>
+<blockquote class="book-hint warning">
+  <strong>Attention:</strong>
+if you have set the config option <code>muSpec.forceSync: true</code> in your furo config,
+the command will always enable the <code>-d</code> option.
 </blockquote>
+
 <p>Because the specs have a higher information density then the µSpecs, furo will fill in calculated default
 values on the first time it creates a spec file. Later calls of this command will not touch the prefilled fields of the spec.</p>
-<h3 id="options">
+<h3 id="config">
+  Config
+  <a class="anchor" href="#config">#</a>
+</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">muSpec</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">types</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># define a set of globs which matches your type definitions</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/**/*types.yaml&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/*types.yaml&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">services</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># define a set of globs which matches your service definitions</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/**/*services.yaml&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/*services.yaml&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">goPackageBase</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;github.com/yourname/sample-specs/dist/pb/&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># this is used to prefix the go package option</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">javaPackagePrefix</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;com.example.tutorial.&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">dir</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;muspecs&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># the folder where you save the µSpecs</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">forceSync</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># This will delete specs which are deleted in muSpec, this is very useful during prototyping</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">requestTypeSuffix</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;Request&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Suffix for the generated request type specs</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="options">
   Options
   <a class="anchor" href="#options">#</a>
 </h3>
@@ -472,9 +511,9 @@ values on the first time it creates a spec file. Later calls of this command wil
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/32950d24df9d5a504f3324f58e1153b7a0f49004" title='Last modified by veith | September 13, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/dbabdbd6edf1b46eb5717bdb48d546614d4dc955" title='Last modified by Veith Zäch | September 14, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>September 13, 2021</span>
+      <span>September 14, 2021</span>
     </a>
   </div>
 
@@ -506,6 +545,7 @@ values on the first time it creates a spec file. Later calls of this command wil
       <ul>
         <li><a href="#furo-muspec2spec">furo muSpec2Spec</a>
           <ul>
+            <li><a href="#config">Config</a></li>
             <li><a href="#options">Options</a></li>
             <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
           </ul>

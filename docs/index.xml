@@ -101,7 +101,7 @@ The furo web components are a wide set of components which covers everything you
       <guid>http://furo.pro/docs/commands/furo_muSpec2Spec/</guid>
       <description>furo muSpec2Spec #  Updates or creates the specs with the definitions from the µSpecs.
 Renaming and restructuring your spec folder is ok, furo will always update the correct file. Also a reordering of the fields in your spec, to get nicer protos of for other reasons, is also ok. Furo works with a internal AST and is not interested in order or file names.
- if you have set the config option muSpec.</description>
+Attention: if you have set the config option muSpec.</description>
     </item>
     
     <item>
@@ -122,7 +122,7 @@ Renaming and restructuring your spec folder is ok, furo will always update the c
       <guid>http://furo.pro/docs/configuration/</guid>
       <description>Configuration #  Each spec project must have a .furo configuration file.
 A fictive example of a furo config for a spec project.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50  furo:&amp;#34;1.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51  furo:&amp;#34;1.</description>
     </item>
     
     <item>

@@ -7,19 +7,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Configuration #  Each spec project must have a .furo configuration file.
 A fictive example of a furo config for a spec project.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50  furo:&#34;1.">
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51  furo:&#34;1.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Project Configuration" />
 <meta property="og:description" content="Configuration #  Each spec project must have a .furo configuration file.
 A fictive example of a furo config for a spec project.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50  furo:&#34;1." />
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51  furo:&#34;1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://furo.pro/docs/configuration/" />
-<meta property="article:modified_time" content="2021-09-13T17:48:38+02:00" />
+<meta property="article:modified_time" content="2021-09-14T14:57:22+02:00" />
 <title>Project Configuration | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.38967a9a0ded376fb27c68bce29bf3baaa771df2c94016c1de5db06655f1e756.js" integrity="sha256-OJZ6mg3tN2&#43;yfGi84pvzuqp3HfLJQBbB3l2wZlXx51Y="></script>
+<script defer src="/en.search.min.c5a7b8e2c02456db1ac937de9b42e733c8becdc995696afd53227e588f719c63.js" integrity="sha256-xae44sAkVtsayTfem0LnM8i&#43;zcmVaWr9UyJ&#43;WI9xnGM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -486,6 +486,7 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">furo</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;1.28.5&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># the minimal version of furo</span><span style="color:#bbb">
@@ -507,6 +508,7 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="color:#bbb">  </span><span style="color:#000080">javaPackagePrefix</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;com.example.tutorial.&#34;</span><span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#000080">dir</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;muspecs&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># the folder where you save the µSpecs</span><span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#000080">forceSync</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># This will delete specs which are deleted in muSpec, this is very useful during prototyping</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">requestTypeSuffix</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;Request&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Suffix for the generated request type specs</span><span style="color:#bbb">
 </span><span style="color:#bbb"></span><span style="color:#000080">commands</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#camelCase is not allowed, command scripts can only be executed from a flow</span><span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#000080">gen_transcoder</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/gprcgateway/generate.sh&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># shell script to generate a half grpc gateway</span><span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#000080">buf_generate</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/buf_generate.sh&#34;</span><span style="color:#bbb">
@@ -550,9 +552,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/32950d24df9d5a504f3324f58e1153b7a0f49004" title='Last modified by veith | September 13, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/dbabdbd6edf1b46eb5717bdb48d546614d4dc955" title='Last modified by Veith Zäch | September 14, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>September 13, 2021</span>
+      <span>September 14, 2021</span>
     </a>
   </div>
 
