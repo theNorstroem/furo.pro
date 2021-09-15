@@ -6,20 +6,20 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="フロー furoBEC #  The furo build essentials container. #  This container contains all tools you need to work with a furo spec project.
-Usage #  Bash mode #  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit  Command mode #  This will run furo with the configured flow build.
-docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build   TIPP: If your furo commands have to access different directories, do not forget to mount them.">
+Usage #  Bash mode #  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit  Command mode #  Starting your container with an argument like &ldquo;build&rdquo; or &ldquo;publish&rdquo; will execute the corresponding flow.
+docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build  Note: Only the arguments build and publish are supported.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="B E C" />
 <meta property="og:description" content="フロー furoBEC #  The furo build essentials container. #  This container contains all tools you need to work with a furo spec project.
-Usage #  Bash mode #  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit  Command mode #  This will run furo with the configured flow build.
-docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build   TIPP: If your furo commands have to access different directories, do not forget to mount them." />
+Usage #  Bash mode #  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit  Command mode #  Starting your container with an argument like &ldquo;build&rdquo; or &ldquo;publish&rdquo; will execute the corresponding flow.
+docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build  Note: Only the arguments build and publish are supported." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://furo.pro/docs/tools/BEC/" />
-<meta property="article:modified_time" content="2021-09-15T10:09:13+02:00" />
+<meta property="article:modified_time" content="2021-09-15T10:29:56+02:00" />
 <title>B E C | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.b7bb137e1334d25e34385662222251747c354c214baac4a369404a87e45a0e9f.js" integrity="sha256-t7sTfhM00l40OFZiIiJRdHw1TCFLqsSjaUBKh&#43;RaDp8="></script>
+<script defer src="/en.search.min.57a805de1d0baaefc5fea179fd3f5716557961a301658a3b577ef50e71a72da9.js" integrity="sha256-V6gF3h0Lqu/F/qF5/T9XFlV5YaMBZYo7V371DnGnLak="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -456,6 +456,7 @@ https://github.com/alex-shpak/hugo-book
           </ul>
         </li>
         <li><a href="#installed-tools">Installed Tools</a></li>
+        <li><a href="#customizing-the-container-with-furobecrc">Customizing the container with .furobecrc</a></li>
       </ul>
     </li>
   </ul>
@@ -495,69 +496,76 @@ exit
   Command mode
   <a class="anchor" href="#command-mode">#</a>
 </h3>
-<p>This will run furo with the configured flow <em>build</em>.</p>
+<p>Starting your container with an argument like &ldquo;build&rdquo; or &ldquo;publish&rdquo; will execute the corresponding flow.</p>
 <pre><code>docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build
 </code></pre>
-<blockquote>
-<p>TIPP: If your furo commands have to access different directories, do not forget to mount them.</p>
+<blockquote class="book-hint Info">
+  <strong>Note:</strong> Only the arguments <strong>build</strong> and <strong>publish</strong> are supported.
 </blockquote>
+
+<blockquote class="book-hint Info">
+  <strong>Tipp:</strong> If your custom commands have to access different directories, do not forget to mount them.
+</blockquote>
+
 <h2 id="installed-tools">
   Installed Tools
   <a class="anchor" href="#installed-tools">#</a>
 </h2>
+<p>To see the installed versions of the tools, please refer to the 
+  <a href="https://github.com/eclipse/eclipsefuro/blob/main/BEC/Dockerfile">Dockerfile</a> of the version you use.</p>
 <ul>
+<li>golang</li>
+<li>git</li>
+<li>protoc</li>
+<li>protoc-gen-grpc-gateway (v2)</li>
+<li>protoc-gen-openapiv2</li>
+<li>protoc-gen-go</li>
+<li>protoc-gen-go-grpc</li>
+<li>simple-generator</li>
+<li>furo</li>
+<li>furoc</li>
 <li>
-<p>golang</p>
-</li>
+  <a href="https://docs.buf.build/introduction">buf</a></li>
+<li>protoc-gen-buf-breaking</li>
+<li>protoc-gen-buf-lint</li>
 <li>
-<p>git</p>
-</li>
+  <a href="https://stedolan.github.io/jq/">jq</a></li>
 <li>
-<p>protoc</p>
-</li>
-<li>
-<p>protoc-gen-grpc-gateway (v2)</p>
-</li>
-<li>
-<p>protoc-gen-openapiv2</p>
-</li>
-<li>
-<p>protoc-gen-go</p>
-</li>
-<li>
-<p>protoc-gen-go-grpc</p>
-</li>
-<li>
-<p>simple-generator</p>
-</li>
-<li>
-<p>furo</p>
-</li>
-<li>
-<p>furoc</p>
-</li>
-<li>
-<p>buf</p>
-</li>
-<li>
-<p>protoc-gen-buf-breaking</p>
-</li>
-<li>
-<p>protoc-gen-buf-lint</p>
-</li>
-<li>
-<p>
-  <a href="https://stedolan.github.io/jq/">jq</a></p>
-</li>
-<li>
-<p>
-  <a href="https://mikefarah.gitbook.io/yq/commands/read">yq</a></p>
-</li>
+  <a href="https://mikefarah.gitbook.io/yq/commands/read">yq</a></li>
 </ul>
 <blockquote>
 <p>No furoc generators are installed. Add the needed furoc-gen-XXX to the <code>.furobecrc</code> file.</p>
 </blockquote>
-</article>
+<h2 id="customizing-the-container-with-furobecrc">
+  Customizing the container with .furobecrc
+  <a class="anchor" href="#customizing-the-container-with-furobecrc">#</a>
+</h2>
+<p>Make settings for your environment or project in this file.</p>
+<p>Maybe you need a <code>$GOPRIVATE</code> or other Env vars.</p>
+<p>The <code>.furobecrc</code> is executed whenever you start the container.</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<span style="color:#998;font-style:italic"># change the bash prompt</span>
+<span style="color:#008080">PS1</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;フロー myProject#&#34;</span>
+<span style="color:#008080">GOPRIVATE</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;</span><span style="color:#008080">$GOPRIVATE</span><span style="color:#d14">,github.com/myprivaterepo&#34;</span>
+
+<span style="color:#0086b3">echo</span> <span style="color:#d14">&#39;[url &#34;ssh://git@github.com/&#34;]
+</span><span style="color:#d14">        insteadOf = https://github.com/&#39;</span> &gt; ~/.gitconfig
+        
+</code></pre></td></tr></table>
+</div>
+</div></article>
  
       
 
@@ -567,7 +575,7 @@ exit
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/fb53fedbab675ad45b54352f4fe32ba9eb75657c" title='Last modified by veith | September 15, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/fdc07cc9e0ae85ca0c2c69dda0f05423a57fa45d" title='Last modified by veith | September 15, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>September 15, 2021</span>
     </a>
@@ -611,6 +619,7 @@ exit
           </ul>
         </li>
         <li><a href="#installed-tools">Installed Tools</a></li>
+        <li><a href="#customizing-the-container-with-furobecrc">Customizing the container with .furobecrc</a></li>
       </ul>
     </li>
   </ul>

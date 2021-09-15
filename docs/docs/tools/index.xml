@@ -14,8 +14,8 @@
       
       <guid>http://furo.pro/docs/tools/BEC/</guid>
       <description>フロー furoBEC #  The furo build essentials container. #  This container contains all tools you need to work with a furo spec project.
-Usage #  Bash mode #  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit  Command mode #  This will run furo with the configured flow build.
-docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build   TIPP: If your furo commands have to access different directories, do not forget to mount them.</description>
+Usage #  Bash mode #  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit  Command mode #  Starting your container with an argument like &amp;ldquo;build&amp;rdquo; or &amp;ldquo;publish&amp;rdquo; will execute the corresponding flow.
+docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build  Note: Only the arguments build and publish are supported.</description>
     </item>
     
   </channel>
