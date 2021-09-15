@@ -5,19 +5,17 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="furo exportAsYaml #  Exports all specs for types and services and also the current config in one big yaml file to stdout.
-This comes very handy in custom generators which are ok with the yaml file structure.
-Feel free to add custom sections in the config to use them in your own scripts.
-1 2 3 4 5 6 7 8 9 10 11  installedServices:[...]# The list of installed servicesinstalledTypes:[.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="exportAsYaml" />
-<meta property="og:description" content="furo exportAsYaml #  Exports all specs for types and services and also the current config in one big yaml file to stdout.
-This comes very handy in custom generators which are ok with the yaml file structure.
-Feel free to add custom sections in the config to use them in your own scripts.
-1 2 3 4 5 6 7 8 9 10 11  installedServices:[...]# The list of installed servicesinstalledTypes:[." />
+<meta name="description" content="Working with Dependencies #  You can install another spec in to your project, to use their types.
+Note: A installable dependency must be reachable by your git command.  Install a spec project #  To install a dependency add them to the dependencies section of the config. It is a list with git repositories followed by a version tag or branch name.
+By running furo install the dependency will be added to the configured directory in your project.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Working with Dependencies" />
+<meta property="og:description" content="Working with Dependencies #  You can install another spec in to your project, to use their types.
+Note: A installable dependency must be reachable by your git command.  Install a spec project #  To install a dependency add them to the dependencies section of the config. It is a list with git repositories followed by a version tag or branch name.
+By running furo install the dependency will be added to the configured directory in your project." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://furo.pro/docs/commands/furo_exportAsYaml/" />
+<meta property="og:url" content="http://furo.pro/docs/dependencies/" />
 <meta property="article:modified_time" content="2021-09-15T10:09:13+02:00" />
-<title>exportAsYaml | フロー Furo</title>
+<title>Working with Dependencies | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
@@ -139,7 +137,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/dependencies/" class="">Working with Dependencies</a>
+    <a href="http://furo.pro/docs/dependencies/" class=" active">Working with Dependencies</a>
   
 
         </li>
@@ -152,7 +150,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle" checked />
+    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle"  />
     <label for="section-3fb225060dbc6eb1fda04fb19c520b9e" class="flex justify-between">
       <a href="http://furo.pro/docs/commands/" class="">Commands</a>
       <span>▾</span>
@@ -247,7 +245,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/commands/furo_exportAsYaml/" class=" active">exportAsYaml</a>
+    <a href="http://furo.pro/docs/commands/furo_exportAsYaml/" class="">exportAsYaml</a>
   
 
         </li>
@@ -429,7 +427,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>exportAsYaml</strong>
+  <strong>Working with Dependencies</strong>
 
   <label for="toc-control">
     
@@ -444,15 +442,10 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#working-with-dependencies">Working with Dependencies</a>
       <ul>
-        <li><a href="#furo-exportasyaml">furo exportAsYaml</a>
-          <ul>
-            <li><a href="#running-with-the--f-option">running with the <code>-f</code> option</a></li>
-            <li><a href="#options">Options</a></li>
-            <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
-          </ul>
-        </li>
+        <li><a href="#install-a-spec-project">Install a spec project</a></li>
+        <li><a href="#make-your-project-installable">Make your project installable</a></li>
       </ul>
     </li>
   </ul>
@@ -466,46 +459,38 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="furo-exportasyaml">
-  furo exportAsYaml
-  <a class="anchor" href="#furo-exportasyaml">#</a>
+  <article class="markdown"><h1 id="working-with-dependencies">
+  Working with Dependencies
+  <a class="anchor" href="#working-with-dependencies">#</a>
+</h1>
+<p>You can install another spec in to your project, to use their types.</p>
+<blockquote class="book-hint warning">
+  <strong>Note:</strong> A installable dependency must be reachable by your <code>git</code> command.
+</blockquote>
+
+<h2 id="install-a-spec-project">
+  Install a spec project
+  <a class="anchor" href="#install-a-spec-project">#</a>
 </h2>
-<p>Exports all specs for types and services and also the current config in one big yaml file to stdout.</p>
-<p>This comes very handy in custom generators which are ok with the yaml file structure.</p>
-<p>Feel free to add custom sections in the config to use them in your own scripts.</p>
+<p>To install a dependency add them to the <code>dependencies</code> section of the config.
+It is a list with git repositories followed by a version tag or branch name.</p>
+<p>By running <code>furo install</code> the dependency will be added to the configured directory in your project. It is up to you, if you want to add this folder to your VCS.</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">installedServices</span>:<span style="color:#bbb"> </span>[...]<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The list of installed services</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">installedTypes</span>:<span style="color:#bbb"> </span>[...]<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The list of installed types</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">services</span>:<span style="color:#bbb"> </span>[...]<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The list of services from your project</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">types</span>:<span style="color:#bbb"> </span>[...]<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The list of types  from your project</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">config</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">   </span><span style="color:#000080">module</span>:<span style="color:#bbb"> </span>mod<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># custom config section</span><span style="color:#bbb">
-</span><span style="color:#bbb">   </span><span style="color:#000080">myopts</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># custom config section</span><span style="color:#bbb">
-</span><span style="color:#bbb">      </span><span style="color:#000080">remoteDir</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;path/to/somewhere&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">      </span><span style="color:#000080">otherCustomSetting</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb">
-</span><span style="color:#bbb">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">dependencies</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>- <span style="color:#d14">&#34;git@github.com:theNorstroem/furoBaseSpecs.git v1.27.1&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># We use this to have the well known types available.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">dependenciesDir</span>:<span style="color:#bbb"> </span>dependencies<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Your installed dependencies from other spec project are saved in this directory</span><span style="color:#bbb">
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="running-with-the--f-option">
-  running with the <code>-f</code> option
-  <a class="anchor" href="#running-with-the--f-option">#</a>
-</h3>
-<p>You will notice that the output structure of running <code>furo exportAsYaml</code> does have a different structure. Your definitions will be included in the following strurcture:</p>
+</div><p>Installed dependencies are saved with their full path in to your <code>dependencyDir</code>.</p>
+<p>Like <code>dependencies/github.com/theNorstroem/furoBaseSpecs/...</code></p>
+<blockquote class="book-hint info">
+  <p><strong>Tipp:</strong> If you work with <code>buf</code>, do not forget to add the folder to the roots of your buf config.</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -514,25 +499,49 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">        </span><span style="color:#000080">specdir</span>:<span style="color:#bbb"> </span>dependencies/github.com/theNorstroem/furoBaseSpecs/specs<span style="color:#bbb">
-</span><span style="color:#bbb">        </span><span style="color:#000080">path</span>:<span style="color:#bbb"> </span>furo<span style="color:#bbb">
-</span><span style="color:#bbb">        </span><span style="color:#000080">filename</span>:<span style="color:#bbb"> </span>big_decimal.type.spec<span style="color:#bbb">
-</span><span style="color:#bbb">        </span><span style="color:#000080">typespec</span>:<span style="color:#bbb"> </span>...<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># the spec is available under this property</span><span style="color:#bbb">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">build</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">roots</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- dist/protos<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- dependencies/github.com/theNorstroem/furoBaseSpecs/dist/proto<span style="color:#bbb">
 </span></code></pre></td></tr></table>
 </div>
-</div><pre><code>furo exportAsYaml [flags]
-</code></pre><h3 id="options">
-  Options
-  <a class="anchor" href="#options">#</a>
-</h3>
-<pre><code>  -f, --full   Include the ast info like filenames and more.
-  -h, --help   help for exportAsYaml
-</code></pre><h3 id="options-inherited-from-parent-commands">
-  Options inherited from parent commands
-  <a class="anchor" href="#options-inherited-from-parent-commands">#</a>
-</h3>
-<pre><code>      --config string   config file (default is CWD/.furo.yaml)
-</code></pre></article>
+</div>
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <p><strong>Attention:</strong> Dependencies of dependencies are not resolved. You will have to add them to your project too.</p>
+<p>To identify them is not so difficult. <code>furo checkImports</code> can give you a hint for the types that you use directly and
+protoc or buf will also tell you if you have forgotten something.</p>
+
+</blockquote>
+
+<h2 id="make-your-project-installable">
+  Make your project installable
+  <a class="anchor" href="#make-your-project-installable">#</a>
+</h2>
+<p>To make your project installable by other projects, add the <code>dist</code> section in to your project.
+You have to define, which files should be available in the projects that installs your project.</p>
+<p>It depends on your use case, which files you will provide. At least you have to provide the <strong>.furo</strong> file and the <strong>specs</strong> directory.
+Providing the generated <strong>protos</strong> is also strongly recommended, so the consumer of your spec can add them easily in their buf config (if grpc is a target for you).</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">dist</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">files</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># enter a list of files and directories which should be installed by other projects when they install your spec projec</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- dist/protos<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- specs<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- README.md<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- .furo<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div></article>
  
       
 
@@ -572,15 +581,10 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#working-with-dependencies">Working with Dependencies</a>
       <ul>
-        <li><a href="#furo-exportasyaml">furo exportAsYaml</a>
-          <ul>
-            <li><a href="#running-with-the--f-option">running with the <code>-f</code> option</a></li>
-            <li><a href="#options">Options</a></li>
-            <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
-          </ul>
-        </li>
+        <li><a href="#install-a-spec-project">Install a spec project</a></li>
+        <li><a href="#make-your-project-installable">Make your project installable</a></li>
       </ul>
     </li>
   </ul>

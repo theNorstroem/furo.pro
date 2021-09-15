@@ -5,19 +5,17 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="furo exportAsYaml #  Exports all specs for types and services and also the current config in one big yaml file to stdout.
-This comes very handy in custom generators which are ok with the yaml file structure.
-Feel free to add custom sections in the config to use them in your own scripts.
-1 2 3 4 5 6 7 8 9 10 11  installedServices:[...]# The list of installed servicesinstalledTypes:[.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="exportAsYaml" />
-<meta property="og:description" content="furo exportAsYaml #  Exports all specs for types and services and also the current config in one big yaml file to stdout.
-This comes very handy in custom generators which are ok with the yaml file structure.
-Feel free to add custom sections in the config to use them in your own scripts.
-1 2 3 4 5 6 7 8 9 10 11  installedServices:[...]# The list of installed servicesinstalledTypes:[." />
+<meta name="description" content="Working with Flows #  Instead of calling each command of furo again and again, you can set up a flow which chains them together.
+The config file from the init haves a preconfigured default flow.
+chain of furo commands  mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph LR deprecated -- muSpec2Spec -- checkImports -- genMessageProtos -- genServiceProtos How to define a flow #  The single commands of furo can be configured as a chain of commands.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Working with Flows" />
+<meta property="og:description" content="Working with Flows #  Instead of calling each command of furo again and again, you can set up a flow which chains them together.
+The config file from the init haves a preconfigured default flow.
+chain of furo commands  mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph LR deprecated -- muSpec2Spec -- checkImports -- genMessageProtos -- genServiceProtos How to define a flow #  The single commands of furo can be configured as a chain of commands." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://furo.pro/docs/commands/furo_exportAsYaml/" />
+<meta property="og:url" content="http://furo.pro/docs/flow/" />
 <meta property="article:modified_time" content="2021-09-15T10:09:13+02:00" />
-<title>exportAsYaml | フロー Furo</title>
+<title>Working with Flows | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
@@ -126,7 +124,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/flow/" class="">Working with Flows</a>
+    <a href="http://furo.pro/docs/flow/" class=" active">Working with Flows</a>
   
 
         </li>
@@ -152,7 +150,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle" checked />
+    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle"  />
     <label for="section-3fb225060dbc6eb1fda04fb19c520b9e" class="flex justify-between">
       <a href="http://furo.pro/docs/commands/" class="">Commands</a>
       <span>▾</span>
@@ -247,7 +245,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/commands/furo_exportAsYaml/" class=" active">exportAsYaml</a>
+    <a href="http://furo.pro/docs/commands/furo_exportAsYaml/" class="">exportAsYaml</a>
   
 
         </li>
@@ -429,7 +427,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>exportAsYaml</strong>
+  <strong>Working with Flows</strong>
 
   <label for="toc-control">
     
@@ -444,15 +442,14 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#working-with-flows">Working with Flows</a>
       <ul>
-        <li><a href="#furo-exportasyaml">furo exportAsYaml</a>
+        <li><a href="#how-to-define-a-flow">How to define a flow</a>
           <ul>
-            <li><a href="#running-with-the--f-option">running with the <code>-f</code> option</a></li>
-            <li><a href="#options">Options</a></li>
-            <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
+            <li><a href="#execute-a-flow">Execute a flow</a></li>
           </ul>
         </li>
+        <li><a href="#how-to-define-a-custom-command">How to define a custom command</a></li>
       </ul>
     </li>
   </ul>
@@ -466,13 +463,38 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="furo-exportasyaml">
-  furo exportAsYaml
-  <a class="anchor" href="#furo-exportasyaml">#</a>
+  <article class="markdown"><h1 id="working-with-flows">
+  Working with Flows
+  <a class="anchor" href="#working-with-flows">#</a>
+</h1>
+<p>Instead of calling each command of furo again and again, you can set up a flow which chains them together.</p>
+<p>The config file from the init haves a preconfigured default flow.</p>
+<p><em>chain of furo commands</em>
+
+
+<script src="/mermaid.min.js"></script>
+
+  <script>mermaid.initialize({
+  "flowchart": {
+    "useMaxWidth":true
+  },
+  "theme": "default"
+}
+)</script>
+
+
+
+
+<p class="mermaid">
+graph LR
+ deprecated --> muSpec2Spec --> checkImports --> genMessageProtos --> genServiceProtos
+</p>
+</p>
+<h2 id="how-to-define-a-flow">
+  How to define a flow
+  <a class="anchor" href="#how-to-define-a-flow">#</a>
 </h2>
-<p>Exports all specs for types and services and also the current config in one big yaml file to stdout.</p>
-<p>This comes very handy in custom generators which are ok with the yaml file structure.</p>
-<p>Feel free to add custom sections in the config to use them in your own scripts.</p>
+<p>The single commands of furo can be configured as a chain of commands.</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -486,53 +508,70 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">installedServices</span>:<span style="color:#bbb"> </span>[...]<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The list of installed services</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">installedTypes</span>:<span style="color:#bbb"> </span>[...]<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The list of installed types</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">services</span>:<span style="color:#bbb"> </span>[...]<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The list of services from your project</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">types</span>:<span style="color:#bbb"> </span>[...]<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># The list of types  from your project</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000080">config</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">   </span><span style="color:#000080">module</span>:<span style="color:#bbb"> </span>mod<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># custom config section</span><span style="color:#bbb">
-</span><span style="color:#bbb">   </span><span style="color:#000080">myopts</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># custom config section</span><span style="color:#bbb">
-</span><span style="color:#bbb">      </span><span style="color:#000080">remoteDir</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;path/to/somewhere&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">      </span><span style="color:#000080">otherCustomSetting</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb">
-</span><span style="color:#bbb">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">flows</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">default</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">    </span>- deprecated<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- muSpec2Spec<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- clean_dist<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- checkImports<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- genMessageProtos<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- genServiceProtos<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">generate</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- buf_generate<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- gen_transcoder<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- genEsModule<span style="color:#bbb">
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="running-with-the--f-option">
-  running with the <code>-f</code> option
-  <a class="anchor" href="#running-with-the--f-option">#</a>
+</div><h3 id="execute-a-flow">
+  Execute a flow
+  <a class="anchor" href="#execute-a-flow">#</a>
 </h3>
-<p>You will notice that the output structure of running <code>furo exportAsYaml</code> does have a different structure. Your definitions will be included in the following strurcture:</p>
+<p>If you have a flow with the name <em>default</em>* you can execute it, by just calling <code>furo</code> without any options.
+The same flow can be started with <code>furo run default</code>.</p>
+<p>To start the flow with the name &ldquo;generate&rdquo;, type in <code>furo run generate</code>.</p>
+<blockquote class="book-hint warning">
+  <strong>Note:</strong> At the moment the flow runner jumps to the next command on any error of a sub command. This behavior may change in the future.
+</blockquote>
+
+<h2 id="how-to-define-a-custom-command">
+  How to define a custom command
+  <a class="anchor" href="#how-to-define-a-custom-command">#</a>
+</h2>
+<p>You can add custom commands which can be integrated in a flow. A custom command is a link to an executable, this can be
+a shell script or a command which is installed on your system. Make sure that you enter the correct paths.</p>
+<p>Add your commands in the commands section of the config.</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">        </span><span style="color:#000080">specdir</span>:<span style="color:#bbb"> </span>dependencies/github.com/theNorstroem/furoBaseSpecs/specs<span style="color:#bbb">
-</span><span style="color:#bbb">        </span><span style="color:#000080">path</span>:<span style="color:#bbb"> </span>furo<span style="color:#bbb">
-</span><span style="color:#bbb">        </span><span style="color:#000080">filename</span>:<span style="color:#bbb"> </span>big_decimal.type.spec<span style="color:#bbb">
-</span><span style="color:#bbb">        </span><span style="color:#000080">typespec</span>:<span style="color:#bbb"> </span>...<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># the spec is available under this property</span><span style="color:#bbb">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">commands</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#camelCase is not allowed, command scripts can only be executed from a flow</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">gen_transcoder</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/gprcgateway/generate.sh&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># shell script to generate a grpc gateway mux.</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">buf_generate</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/buf_generate.sh&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># call buf with the configured options.</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">buf_braking</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/buf_breaking.sh&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">clean_dist </span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/cleanUpDist.sh&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Deletes the content of the dist folder</span><span style="color:#bbb">
 </span></code></pre></td></tr></table>
 </div>
-</div><pre><code>furo exportAsYaml [flags]
-</code></pre><h3 id="options">
-  Options
-  <a class="anchor" href="#options">#</a>
-</h3>
-<pre><code>  -f, --full   Include the ast info like filenames and more.
-  -h, --help   help for exportAsYaml
-</code></pre><h3 id="options-inherited-from-parent-commands">
-  Options inherited from parent commands
-  <a class="anchor" href="#options-inherited-from-parent-commands">#</a>
-</h3>
-<pre><code>      --config string   config file (default is CWD/.furo.yaml)
-</code></pre></article>
+</div><blockquote class="book-hint danger">
+  <strong>Attention:</strong> You can <strong>not</strong> use camelCase notation for the name of a custom command.
+</blockquote>
+
+<p>The commands that you have defined, can be used in any flow configuration.</p>
+
+
+<p class="mermaid">
+graph LR
+genMessageProtos --> genServiceProtos --> buf_generate --> gen_transcoder --> genEsModule
+</p>
+
+</article>
  
       
 
@@ -572,15 +611,14 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#working-with-flows">Working with Flows</a>
       <ul>
-        <li><a href="#furo-exportasyaml">furo exportAsYaml</a>
+        <li><a href="#how-to-define-a-flow">How to define a flow</a>
           <ul>
-            <li><a href="#running-with-the--f-option">running with the <code>-f</code> option</a></li>
-            <li><a href="#options">Options</a></li>
-            <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
+            <li><a href="#execute-a-flow">Execute a flow</a></li>
           </ul>
         </li>
+        <li><a href="#how-to-define-a-custom-command">How to define a custom command</a></li>
       </ul>
     </li>
   </ul>

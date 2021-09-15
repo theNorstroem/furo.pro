@@ -5,21 +5,21 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Configuration #  Each spec project must have a .furo configuration file.
-A fictive example of a furo config for a spec project.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51  furo:&#34;1.">
+<meta name="description" content="Configuration #  Each spec project must have a configuration file. The furo cli tool will look up for .furo in the current working directory or can be called with the --config option.
+You can generate a config file with a inital project structure by calling furo init.
+As you can see, the config file is a regular yaml file and is easy to edit in any text editor or IDE.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Project Configuration" />
-<meta property="og:description" content="Configuration #  Each spec project must have a .furo configuration file.
-A fictive example of a furo config for a spec project.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51  furo:&#34;1." />
+<meta property="og:description" content="Configuration #  Each spec project must have a configuration file. The furo cli tool will look up for .furo in the current working directory or can be called with the --config option.
+You can generate a config file with a inital project structure by calling furo init.
+As you can see, the config file is a regular yaml file and is easy to edit in any text editor or IDE." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://furo.pro/docs/configuration/" />
-<meta property="article:modified_time" content="2021-09-14T14:57:22+02:00" />
+<meta property="article:modified_time" content="2021-09-15T10:09:13+02:00" />
 <title>Project Configuration | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.c5a7b8e2c02456db1ac937de9b42e733c8becdc995696afd53227e588f719c63.js" integrity="sha256-xae44sAkVtsayTfem0LnM8i&#43;zcmVaWr9UyJ&#43;WI9xnGM="></script>
+<script defer src="/en.search.min.b7bb137e1334d25e34385662222251747c354c214baac4a369404a87e45a0e9f.js" integrity="sha256-t7sTfhM00l40OFZiIiJRdHw1TCFLqsSjaUBKh&#43;RaDp8="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -112,6 +112,32 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="http://furo.pro/docs/configuration/" class=" active">Project Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/flow/" class="">Working with Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/dependencies/" class="">Working with Dependencies</a>
   
 
         </li>
@@ -302,6 +328,24 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="http://furo.pro/docs/sourceoftruth/" class="">Source of Truth</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-a432bb056edf769c9f15f6893988f152" class="toggle"  />
     <label for="section-a432bb056edf769c9f15f6893988f152" class="flex justify-between">
       <a href="http://furo.pro/docs/tools/" class="">Additional Tools</a>
@@ -324,24 +368,6 @@ https://github.com/alex-shpak/hugo-book
 
         </li>
       
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="http://furo.pro/docs/sourceoftruth/" class="">Source of Truth</a>
-  
-
-          
-  <ul>
     
   </ul>
 
@@ -432,8 +458,10 @@ https://github.com/alex-shpak/hugo-book
   Configuration
   <a class="anchor" href="#configuration">#</a>
 </h1>
-<p>Each spec project must have a <em>.furo</em> configuration file.</p>
-<p>A fictive example of a furo config for a spec project.</p>
+<p>Each spec project must have a configuration file. The furo cli tool will look up for <em>.furo</em> in the current working directory or can be called with the <code>--config</code> option.</p>
+<p>You can generate a config file with a inital project structure by calling <code>furo init</code>.</p>
+<p>As you can see, the config file is a regular yaml file and is easy to edit in any text editor or IDE.</p>
+<p><em>Example of a configuration file</em></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -552,9 +580,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/dbabdbd6edf1b46eb5717bdb48d546614d4dc955" title='Last modified by Veith Zäch | September 14, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/fb53fedbab675ad45b54352f4fe32ba9eb75657c" title='Last modified by veith | September 15, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>September 14, 2021</span>
+      <span>September 15, 2021</span>
     </a>
   </div>
 

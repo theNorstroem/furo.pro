@@ -53,9 +53,31 @@ The furo web components are a wide set of components which covers everything you
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://furo.pro/docs/configuration/</guid>
-      <description>Configuration #  Each spec project must have a .furo configuration file.
-A fictive example of a furo config for a spec project.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51  furo:&amp;#34;1.</description>
+      <description>Configuration #  Each spec project must have a configuration file. The furo cli tool will look up for .furo in the current working directory or can be called with the --config option.
+You can generate a config file with a inital project structure by calling furo init.
+As you can see, the config file is a regular yaml file and is easy to edit in any text editor or IDE.</description>
+    </item>
+    
+    <item>
+      <title>Working with Flows</title>
+      <link>http://furo.pro/docs/flow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://furo.pro/docs/flow/</guid>
+      <description>Working with Flows #  Instead of calling each command of furo again and again, you can set up a flow which chains them together.
+The config file from the init haves a preconfigured default flow.
+chain of furo commands  mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph LR deprecated -- muSpec2Spec -- checkImports -- genMessageProtos -- genServiceProtos How to define a flow #  The single commands of furo can be configured as a chain of commands.</description>
+    </item>
+    
+    <item>
+      <title>Working with Dependencies</title>
+      <link>http://furo.pro/docs/dependencies/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://furo.pro/docs/dependencies/</guid>
+      <description>Working with Dependencies #  You can install another spec in to your project, to use their types.
+Note: A installable dependency must be reachable by your git command.  Install a spec project #  To install a dependency add them to the dependencies section of the config. It is a list with git repositories followed by a version tag or branch name.
+By running furo install the dependency will be added to the configured directory in your project.</description>
     </item>
     
   </channel>
