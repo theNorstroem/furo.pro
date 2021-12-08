@@ -5,17 +5,15 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="furo muSpec2Spec #  Updates or creates the specs with the definitions from the µSpecs.
-Renaming and restructuring your spec folder is ok, furo will always update the correct file. Also a reordering of the fields in your spec, to get nicer protos of for other reasons, is also ok. Furo works with a internal AST and is not interested in order or file names.
-Attention: if you have set the config option muSpec.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="muSpec2Spec" />
-<meta property="og:description" content="furo muSpec2Spec #  Updates or creates the specs with the definitions from the µSpecs.
-Renaming and restructuring your spec folder is ok, furo will always update the correct file. Also a reordering of the fields in your spec, to get nicer protos of for other reasons, is also ok. Furo works with a internal AST and is not interested in order or file names.
-Attention: if you have set the config option muSpec." />
+<meta name="description" content="Quickstart Guide #  The easiest way to try out furo is by using furo init with the furo-BEC container. The container brings all the additional tools you need to generate the grpc stubs.
+In this guide we will setup a furo spec project with the furo init command. The furo cli will then create the needed files to have a working project with a sample µType and µService definition.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Quickstart Guide" />
+<meta property="og:description" content="Quickstart Guide #  The easiest way to try out furo is by using furo init with the furo-BEC container. The container brings all the additional tools you need to generate the grpc stubs.
+In this guide we will setup a furo spec project with the furo init command. The furo cli will then create the needed files to have a working project with a sample µType and µService definition." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://furo.pro/docs/commands/furo_muSpec2Spec/" />
+<meta property="og:url" content="http://furo.pro/docs/guides/quickstart/" />
 <meta property="article:modified_time" content="2021-12-08T09:26:53+01:00" />
-<title>muSpec2Spec | フロー Furo</title>
+<title>Quickstart Guide | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
@@ -98,7 +96,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-64d0ac0e8a385a6091d238dd382da7cf" class="toggle"  />
+    <input type="checkbox" id="section-64d0ac0e8a385a6091d238dd382da7cf" class="toggle" checked />
     <label for="section-64d0ac0e8a385a6091d238dd382da7cf" class="flex justify-between">
       <a  class="">Guides</a>
       <span>▾</span>
@@ -115,7 +113,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/guides/quickstart/" class="">Quickstart Guide</a>
+    <a href="http://furo.pro/docs/guides/quickstart/" class=" active">Quickstart Guide</a>
   
 
         </li>
@@ -185,7 +183,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle" checked />
+    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle"  />
     <label for="section-3fb225060dbc6eb1fda04fb19c520b9e" class="flex justify-between">
       <a href="http://furo.pro/docs/commands/" class="">Commands</a>
       <span>▾</span>
@@ -254,7 +252,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/commands/furo_muSpec2Spec/" class=" active">muSpec2Spec</a>
+    <a href="http://furo.pro/docs/commands/furo_muSpec2Spec/" class="">muSpec2Spec</a>
   
 
         </li>
@@ -462,7 +460,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>muSpec2Spec</strong>
+  <strong>Quickstart Guide</strong>
 
   <label for="toc-control">
     
@@ -477,13 +475,13 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#quickstart-guide">Quickstart Guide</a>
       <ul>
-        <li><a href="#furo-muspec2spec">furo muSpec2Spec</a>
+        <li>
           <ul>
-            <li><a href="#config">Config</a></li>
-            <li><a href="#options">Options</a></li>
-            <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
+            <li><a href="#steps-to-setup-a-spec-project">Steps to setup a spec project</a></li>
+            <li><a href="#detailed-explanation-of-the-steps">Detailed explanation of the steps</a></li>
+            <li><a href="#project-structure-after-running-furo-init">Project structure after running furo init</a></li>
           </ul>
         </li>
       </ul>
@@ -499,24 +497,17 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="furo-muspec2spec">
-  furo muSpec2Spec
-  <a class="anchor" href="#furo-muspec2spec">#</a>
-</h2>
-<p>Updates or creates the specs with the definitions from the µSpecs.</p>
-<p>Renaming and restructuring your spec folder is ok, furo will always update the correct file. Also a reordering of the fields in your spec,
-to get nicer protos of for other reasons, is also ok. Furo works with a internal AST and is not interested in order or file names.</p>
-<blockquote class="book-hint warning">
-  <strong>Attention:</strong>
-if you have set the config option <code>muSpec.forceSync: true</code> in your furo config,
-the command will always enable the <code>-d</code> option.
-</blockquote>
-
-<p>Because the specs have a higher information density then the µSpecs, furo will fill in calculated default
-values on the first time it creates a spec file. Later calls of this command will not touch the prefilled fields of the spec.</p>
-<h3 id="config">
-  Config
-  <a class="anchor" href="#config">#</a>
+  <article class="markdown"><h1 id="quickstart-guide">
+  Quickstart Guide
+  <a class="anchor" href="#quickstart-guide">#</a>
+</h1>
+<p>The easiest way to try out furo is by using <code>furo init</code> with the furo-BEC container.
+The container brings all the additional tools you need to generate the grpc stubs.</p>
+<p>In this guide we will setup a furo spec project with the <code>furo init</code> command.
+The furo cli will then create the needed files to have a working project with a sample µType and µService definition.</p>
+<h3 id="steps-to-setup-a-spec-project">
+  Steps to setup a spec project
+  <a class="anchor" href="#steps-to-setup-a-spec-project">#</a>
 </h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -533,35 +524,128 @@ values on the first time it creates a spec file. Later calls of this command wil
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">muSpec</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">types</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># define a set of globs which matches your type definitions</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/**/*types.yaml&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/*types.yaml&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">services</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># define a set of globs which matches your service definitions</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/**/*services.yaml&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/*services.yaml&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">goPackageBase</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;github.com/yourname/sample-specs/dist/pb/&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># this is used to prefix the go package option</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">javaPackagePrefix</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;com.example.tutorial.&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">dir</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;muspecs&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># the folder where you save the µSpecs</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">forceSync</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># This will delete specs which are deleted in muSpec, this is very useful during prototyping</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">requestTypeSuffix</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;Request&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Suffix for the generated request type specs</span><span style="color:#bbb">
-</span><span style="color:#bbb">
-</span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#998;font-style:italic"># 1 Create the project folder</span>
+mkdir sample-spec
+
+<span style="color:#998;font-style:italic"># 2 Switch in to the project folder</span>
+<span style="color:#0086b3">cd</span> sample-spec
+
+<span style="color:#998;font-style:italic"># 3 Start the container </span>
+docker run -it --rm -v <span style="color:#d14">`</span><span style="color:#0086b3">pwd</span><span style="color:#d14">`</span>:/specs thenorstroem/furo-bec
+
+<span style="color:#998;font-style:italic"># 4 Run furo init</span>
+furo init
+
+<span style="color:#998;font-style:italic"># 5 Enter your repository name</span>
+github.com/yourname/sample-specs
+
+<span style="color:#998;font-style:italic"># 6 Install the dependencies to other spec projects</span>
+furo install
+
+<span style="color:#998;font-style:italic"># 7 Edit your muspecs and or specs</span>
+
+<span style="color:#998;font-style:italic"># 8 Start the default flow</span>
+furo
+
+<span style="color:#998;font-style:italic"># Commit your changes</span>
+</code></pre></td></tr></table>
 </div>
-</div><h3 id="options">
-  Options
-  <a class="anchor" href="#options">#</a>
+</div><h3 id="detailed-explanation-of-the-steps">
+  Detailed explanation of the steps
+  <a class="anchor" href="#detailed-explanation-of-the-steps">#</a>
 </h3>
-<pre><code>  -d, --delete   Delete specs which are not defined in muspecs
-  -h, --help     help for muSpec2Spec
-      --overwrite-spec-options   Overwrite the proto options section in the spec files
-</code></pre><h3 id="options-inherited-from-parent-commands">
-  Options inherited from parent commands
-  <a class="anchor" href="#options-inherited-from-parent-commands">#</a>
+<h4 id="step-1">
+  Step 1
+  <a class="anchor" href="#step-1">#</a>
+</h4>
+<p>This folder must be under version control with git to make your specs installable by other spec projects.</p>
+<h4 id="step-3-start-the-container">
+  Step 3 Start the container
+  <a class="anchor" href="#step-3-start-the-container">#</a>
+</h4>
+<p>If you already have an environment for proto and grpc development, you can 
+  <a href="/docs/installation/">install</a> and use the furo cli
+and all the other required commands locally. The 
+  <a href="/docs/tools/BEC/">furo-BEC</a> comes with a set of needed or useful tools.</p>
+<h4 id="step-4--5-run-furo-init">
+  Step 4 + 5 Run furo init
+  <a class="anchor" href="#step-4--5-run-furo-init">#</a>
+</h4>
+<p>This command will create a 
+  <a href="/docs/quickstart/#project-structure-after-running-furo-init">project structure</a> with good default settings to begin with.
+All you have to enter is the repository name for your project.</p>
+<blockquote>
+<p>If there is already a <code>.furo</code> file in the folder, the init command will abort.</p>
+</blockquote>
+<h4 id="step-6-install-the-dependencies-to-other-spec-projects">
+  Step 6 Install the dependencies to other spec projects
+  <a class="anchor" href="#step-6-install-the-dependencies-to-other-spec-projects">#</a>
+</h4>
+<p>A spec project can use definitions from other spec projects. The created example will use the FuroBaseSpecs which comes with a lot of
+additional types to use (the google WellKnownTypes , google.protobuf.Any and many more).</p>
+<h4 id="step-8-start-the-default-flow">
+  Step 8 Start the default flow
+  <a class="anchor" href="#step-8-start-the-default-flow">#</a>
+</h4>
+<p>By running <code>furo</code> the configured default flow will be executed. This command is similar to 
+  <a href="/docs/commands/furo_run/"><code>furo run default</code></a>.</p>
+<p>The example is configured to do the following flow steps:</p>
+<ul>
+<li><code>deprecated</code> : Check for used types which are declared as deprecated.</li>
+<li><code>muSpec2Spec</code> : Create / Update the specs using the muSpecs as input.</li>
+<li><code>clean_dist</code> : Configured command which starts a script to delete the dist folder.</li>
+<li><code>checkImports</code> : Check for types which are not imported, add the imports when furo can resolve it.</li>
+<li><code>genMessageProtos</code> : Create the protos for the messages.</li>
+<li><code>genServiceProtos</code> : Create the protos for the services.</li>
+<li><code>buf_generate</code> : Configured command which starts the buf generator.</li>
+<li><code>gen_transcoder</code> : Configured command which produces a go package with a 
+  <a href="https://grpc-ecosystem.github.io/grpc-gateway/">grpc-gateway</a> server mux.</li>
+<li><code>genEsModule</code> : Generates a es module with the specs which is used by 
+  <a href="/docs/web-components/">eclipsefuro-web</a>.</li>
+</ul>
+<h3 id="project-structure-after-running-furo-init">
+  Project structure after running furo init
+  <a class="anchor" href="#project-structure-after-running-furo-init">#</a>
 </h3>
-<pre><code>      --config string   config file (default is CWD/.furo)
+<p>The initialized project will have a</p>
+<ul>
+<li>
+  <a href="/docs/configuration/">.furoc</a> file which contains the project configuration</li>
+<li>muspec folder with some examples</li>
+<li>empty specs folder</li>
+<li>some example scripts to use in your flows</li>
+</ul>
+<p><em>initial project</em></p>
+<pre><code>.
+├── buf.gen.yaml
+├── buf.yaml
+├── go.mod
+├── muspecs
+│   └── sample
+│       ├── Sample.services.yaml
+│       └── sample.types.yaml
+├── scripts
+│   ├── buf_breaking.sh
+│   ├── buf_generate.sh
+│   ├── cleanUpDist.sh
+│   └── gprcgateway
+│       ├── autoregister.go.tpl
+│       └── generate.sh
+└── specs
+
 </code></pre></article>
  
       
@@ -602,13 +686,13 @@ values on the first time it creates a spec file. Later calls of this command wil
       
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#quickstart-guide">Quickstart Guide</a>
       <ul>
-        <li><a href="#furo-muspec2spec">furo muSpec2Spec</a>
+        <li>
           <ul>
-            <li><a href="#config">Config</a></li>
-            <li><a href="#options">Options</a></li>
-            <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
+            <li><a href="#steps-to-setup-a-spec-project">Steps to setup a spec project</a></li>
+            <li><a href="#detailed-explanation-of-the-steps">Detailed explanation of the steps</a></li>
+            <li><a href="#project-structure-after-running-furo-init">Project structure after running furo init</a></li>
           </ul>
         </li>
       </ul>

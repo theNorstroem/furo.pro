@@ -18,26 +18,6 @@ Installation with brew #  brew tap theNorstroem/tap brew install furo  Installat
     </item>
     
     <item>
-      <title>Quickstart Guide</title>
-      <link>http://furo.pro/docs/quickstart/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://furo.pro/docs/quickstart/</guid>
-      <description>Quickstart Guide #  The easiest way to try out furo is by using furo init with the furo-BEC container. The container brings all the additional tools you need to generate the grpc stubs.
-In this guide we will setup a furo spec project with the furo init command. The furo cli will then create the needed files to have a working project with a sample µType and µService definition.</description>
-    </item>
-    
-    <item>
-      <title>furo web</title>
-      <link>http://furo.pro/docs/web-components/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://furo.pro/docs/web-components/</guid>
-      <description>フロー Furo Web Components #  Furo Web Components provides an enterprise ready set of web components which play seamlessly with Furo. Based on web standards and future proved. Compliant with any technology of choice. With minimal footprint it includes all enterprise standards, i18n, theming and much more.
-The furo web components are a wide set of components which covers everything you need to write a web application. They consume the same types which are defined with furo.</description>
-    </item>
-    
-    <item>
       <title>Overview</title>
       <link>http://furo.pro/docs/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

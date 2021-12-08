@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guides on フロー Furo</title>
+    <link>http://furo.pro/docs/guides/</link>
+    <description>Recent content in Guides on フロー Furo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://furo.pro/docs/guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quickstart Guide</title>
+      <link>http://furo.pro/docs/guides/quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://furo.pro/docs/guides/quickstart/</guid>
+      <description>Quickstart Guide #  The easiest way to try out furo is by using furo init with the furo-BEC container. The container brings all the additional tools you need to generate the grpc stubs.
+In this guide we will setup a furo spec project with the furo init command. The furo cli will then create the needed files to have a working project with a sample µType and µService definition.</description>
+    </item>
+    
+    <item>
+      <title>eBook Tutorial</title>
+      <link>http://furo.pro/docs/guides/ebook-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://furo.pro/docs/guides/ebook-tutorial/</guid>
+      <description>Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack #   eBook: https://github.com/theNorstroem/todo-management-tool/blob/main/eBook.pdf Repository: https://github.com/theNorstroem/todo-management-tool Furo Web Stack: https://furo.pro/  Foreword #  Hi! This guide is intended to simplify the introduction to the FURO Web Stack. The tutorial is based on a realistic story. You will explore:
+ API Design with Eclipse Furo Furo Web Stack (https://furo.pro/) Go programming language (grpc backend) How to expose REST via gRPC Gateway Flow based programming Web Components (custom elements, shadow DOM, HTML templates, https://developer.</description>
+    </item>
+    
+  </channel>
+</rss>

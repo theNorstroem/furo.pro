@@ -48,11 +48,21 @@ Installation with brew #  brew tap theNorstroem/tap brew install furo  Installat
     </item>
     
     <item>
-      <title>Quickstart Guide</title>
-      <link>http://furo.pro/docs/quickstart/</link>
+      <title>Overview</title>
+      <link>http://furo.pro/docs/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://furo.pro/docs/quickstart/</guid>
+      <guid>http://furo.pro/docs/overview/</guid>
+      <description>Overview #  Furo can produce and consume proto files. This enables you to use all the existing protoc generators to generate the output that fits your needs. Outputs can be documentations, boilerplate code and even applications.
+ mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph TD µSpec(µSpec) Spec([Spec]) µSpec-- furo --Spec Spec-. furo .-µSpec Spec-- furoc-gen-XXX --x[...] Spec-- furo --Es6Module Spec-- furo --Proto Proto-- protoc-gen-grpc-gateway --Gateway Proto-- protoc-gen-openapiv2 --OpenApi OpenApi-- swagger --xo[.</description>
+    </item>
+    
+    <item>
+      <title>Quickstart Guide</title>
+      <link>http://furo.pro/docs/guides/quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://furo.pro/docs/guides/quickstart/</guid>
       <description>Quickstart Guide #  The easiest way to try out furo is by using furo init with the furo-BEC container. The container brings all the additional tools you need to generate the grpc stubs.
 In this guide we will setup a furo spec project with the furo init command. The furo cli will then create the needed files to have a working project with a sample µType and µService definition.</description>
     </item>
@@ -83,16 +93,6 @@ Example Config:
     </item>
     
     <item>
-      <title>furo web</title>
-      <link>http://furo.pro/docs/web-components/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://furo.pro/docs/web-components/</guid>
-      <description>フロー Furo Web Components #  Furo Web Components provides an enterprise ready set of web components which play seamlessly with Furo. Based on web standards and future proved. Compliant with any technology of choice. With minimal footprint it includes all enterprise standards, i18n, theming and much more.
-The furo web components are a wide set of components which covers everything you need to write a web application. They consume the same types which are defined with furo.</description>
-    </item>
-    
-    <item>
       <title>muSpec2Spec</title>
       <link>http://furo.pro/docs/commands/furo_muSpec2Spec/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -104,16 +104,6 @@ Attention: if you have set the config option muSpec.</description>
     </item>
     
     <item>
-      <title>Overview</title>
-      <link>http://furo.pro/docs/overview/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://furo.pro/docs/overview/</guid>
-      <description>Overview #  Furo can produce and consume proto files. This enables you to use all the existing protoc generators to generate the output that fits your needs. Outputs can be documentations, boilerplate code and even applications.
- mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph TD µSpec(µSpec) Spec([Spec]) µSpec-- furo --Spec Spec-. furo .-µSpec Spec-- furoc-gen-XXX --x[...] Spec-- furo --Es6Module Spec-- furo --Proto Proto-- protoc-gen-grpc-gateway --Gateway Proto-- protoc-gen-openapiv2 --OpenApi OpenApi-- swagger --xo[.</description>
-    </item>
-    
-    <item>
       <title>Project Configuration</title>
       <link>http://furo.pro/docs/configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -122,6 +112,16 @@ Attention: if you have set the config option muSpec.</description>
       <description>Configuration #  Each spec project must have a configuration file. The furo cli tool will look up for .furo in the current working directory or can be called with the --config option.
 You can generate a config file with a inital project structure by calling furo init.
 As you can see, the config file is a regular yaml file and is easy to edit in any text editor or IDE.</description>
+    </item>
+    
+    <item>
+      <title>eBook Tutorial</title>
+      <link>http://furo.pro/docs/guides/ebook-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://furo.pro/docs/guides/ebook-tutorial/</guid>
+      <description>Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack #   eBook: https://github.com/theNorstroem/todo-management-tool/blob/main/eBook.pdf Repository: https://github.com/theNorstroem/todo-management-tool Furo Web Stack: https://furo.pro/  Foreword #  Hi! This guide is intended to simplify the introduction to the FURO Web Stack. The tutorial is based on a realistic story. You will explore:
+ API Design with Eclipse Furo Furo Web Stack (https://furo.pro/) Go programming language (grpc backend) How to expose REST via gRPC Gateway Flow based programming Web Components (custom elements, shadow DOM, HTML templates, https://developer.</description>
     </item>
     
     <item>

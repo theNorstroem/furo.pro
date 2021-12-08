@@ -5,17 +5,15 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="furo help #  Help about any command
-Synopsis #  Help provides help for any command in the application. Simply type furo help [path to command] for full details.
-furo help [command] [flags] Options #   -h, --help help for help Options inherited from parent commands #   --config string config file (default is CWD/.furo.yaml) ">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="help" />
-<meta property="og:description" content="furo help #  Help about any command
-Synopsis #  Help provides help for any command in the application. Simply type furo help [path to command] for full details.
-furo help [command] [flags] Options #   -h, --help help for help Options inherited from parent commands #   --config string config file (default is CWD/.furo.yaml) " />
+<meta name="description" content="Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack #   eBook: https://github.com/theNorstroem/todo-management-tool/blob/main/eBook.pdf Repository: https://github.com/theNorstroem/todo-management-tool Furo Web Stack: https://furo.pro/  Foreword #  Hi! This guide is intended to simplify the introduction to the FURO Web Stack. The tutorial is based on a realistic story. You will explore:
+ API Design with Eclipse Furo Furo Web Stack (https://furo.pro/) Go programming language (grpc backend) How to expose REST via gRPC Gateway Flow based programming Web Components (custom elements, shadow DOM, HTML templates, https://developer.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="eBook Tutorial" />
+<meta property="og:description" content="Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack #   eBook: https://github.com/theNorstroem/todo-management-tool/blob/main/eBook.pdf Repository: https://github.com/theNorstroem/todo-management-tool Furo Web Stack: https://furo.pro/  Foreword #  Hi! This guide is intended to simplify the introduction to the FURO Web Stack. The tutorial is based on a realistic story. You will explore:
+ API Design with Eclipse Furo Furo Web Stack (https://furo.pro/) Go programming language (grpc backend) How to expose REST via gRPC Gateway Flow based programming Web Components (custom elements, shadow DOM, HTML templates, https://developer." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://furo.pro/docs/commands/furo_help-command/" />
+<meta property="og:url" content="http://furo.pro/docs/guides/ebook-tutorial/" />
 <meta property="article:modified_time" content="2021-12-08T09:26:53+01:00" />
-<title>help | フロー Furo</title>
+<title>eBook Tutorial | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
@@ -98,7 +96,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-64d0ac0e8a385a6091d238dd382da7cf" class="toggle"  />
+    <input type="checkbox" id="section-64d0ac0e8a385a6091d238dd382da7cf" class="toggle" checked />
     <label for="section-64d0ac0e8a385a6091d238dd382da7cf" class="flex justify-between">
       <a  class="">Guides</a>
       <span>▾</span>
@@ -128,7 +126,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/guides/ebook-tutorial/" class="">eBook Tutorial</a>
+    <a href="http://furo.pro/docs/guides/ebook-tutorial/" class=" active">eBook Tutorial</a>
   
 
         </li>
@@ -185,7 +183,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle" checked />
+    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle"  />
     <label for="section-3fb225060dbc6eb1fda04fb19c520b9e" class="flex justify-between">
       <a href="http://furo.pro/docs/commands/" class="">Commands</a>
       <span>▾</span>
@@ -215,7 +213,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/commands/furo_help-command/" class=" active">help</a>
+    <a href="http://furo.pro/docs/commands/furo_help-command/" class="">help</a>
   
 
         </li>
@@ -462,7 +460,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>help</strong>
+  <strong>eBook Tutorial</strong>
 
   <label for="toc-control">
     
@@ -477,15 +475,12 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#creating-an-enterprise-flavoured-todo-application-from-scratch-with-the-furo-web-stack">Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack</a>
       <ul>
-        <li><a href="#furo-help">furo help</a>
-          <ul>
-            <li><a href="#synopsis">Synopsis</a></li>
-            <li><a href="#options">Options</a></li>
-            <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
-          </ul>
-        </li>
+        <li><a href="#foreword">Foreword</a></li>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#setup-the-project">Setup the project</a></li>
+        <li><a href="#book-intro">Book Intro</a></li>
       </ul>
     </li>
   </ul>
@@ -499,29 +494,56 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="furo-help">
-  furo help
-  <a class="anchor" href="#furo-help">#</a>
+  <article class="markdown"><h1 id="creating-an-enterprise-flavoured-todo-application-from-scratch-with-the-furo-web-stack">
+  Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack
+  <a class="anchor" href="#creating-an-enterprise-flavoured-todo-application-from-scratch-with-the-furo-web-stack">#</a>
+</h1>
+<ul>
+<li><em>eBook</em>: <a href="https://github.com/theNorstroem/todo-management-tool/blob/main/eBook.pdf">https://github.com/theNorstroem/todo-management-tool/blob/main/eBook.pdf</a></li>
+<li><em>Repository</em>: <a href="https://github.com/theNorstroem/todo-management-tool">https://github.com/theNorstroem/todo-management-tool</a></li>
+<li><em>Furo Web Stack</em>: <a href="https://furo.pro/">https://furo.pro/</a></li>
+</ul>
+<h2 id="foreword">
+  Foreword
+  <a class="anchor" href="#foreword">#</a>
 </h2>
-<p>Help about any command</p>
-<h3 id="synopsis">
-  Synopsis
-  <a class="anchor" href="#synopsis">#</a>
-</h3>
-<p>Help provides help for any command in the application.
-Simply type furo help [path to command] for full details.</p>
-<pre><code>furo help [command] [flags]
-</code></pre><h3 id="options">
-  Options
-  <a class="anchor" href="#options">#</a>
-</h3>
-<pre><code>  -h, --help   help for help
-</code></pre><h3 id="options-inherited-from-parent-commands">
-  Options inherited from parent commands
-  <a class="anchor" href="#options-inherited-from-parent-commands">#</a>
-</h3>
-<pre><code>      --config string   config file (default is CWD/.furo.yaml)
-</code></pre></article>
+<p>Hi!
+This guide is intended to simplify the introduction to the FURO Web Stack. The tutorial is
+based on a realistic story. You will explore:</p>
+<ul>
+<li>API Design with Eclipse Furo</li>
+<li>Furo Web Stack (<a href="https://furo.pro/">https://furo.pro/</a>)</li>
+<li>Go programming language (grpc backend)</li>
+<li>How to expose REST via gRPC Gateway</li>
+<li>Flow based programming</li>
+<li>Web Components (custom elements, shadow DOM, HTML templates,
+<a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">https://developer.mozilla.org/en-US/docs/Web/Web_Components</a>)</li>
+</ul>
+<h2 id="getting-started">
+  Getting Started
+  <a class="anchor" href="#getting-started">#</a>
+</h2>
+<p>We recommend 2+ years of programming experience in JavaScript / HTML / CSS and a basic knowledge of Protocol Buffers. Experiences in Go is also a plus. But don’t worry, you don’t have to be an expert.</p>
+<p>Complete 
+  <a href="https://tour.golang.org/basics/1">the free 17 lectures</a> of A Tour Of Go2 to get familiar with the syntax and basic
+concepts.</p>
+<h2 id="setup-the-project">
+  Setup the project
+  <a class="anchor" href="#setup-the-project">#</a>
+</h2>
+<p>Visit the Furo ToDo Github repository and follow the installation instructions.
+<a href="https://github.com/theNorstroem/todo-management-tool">https://github.com/theNorstroem/todo-management-tool</a></p>
+<h2 id="book-intro">
+  Book Intro
+  <a class="anchor" href="#book-intro">#</a>
+</h2>
+<p>The book guides you along a story through the functions of Eclipse Furo.
+Please check out the GitHub branch for the corresponding chapter.
+A checkout is marked with the</p>
+<pre><code>&gt;_ git checkout ...
+</code></pre>
+<p>sign.</p>
+</article>
  
       
 
@@ -561,15 +583,12 @@ Simply type furo help [path to command] for full details.</p>
       
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#creating-an-enterprise-flavoured-todo-application-from-scratch-with-the-furo-web-stack">Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack</a>
       <ul>
-        <li><a href="#furo-help">furo help</a>
-          <ul>
-            <li><a href="#synopsis">Synopsis</a></li>
-            <li><a href="#options">Options</a></li>
-            <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
-          </ul>
-        </li>
+        <li><a href="#foreword">Foreword</a></li>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#setup-the-project">Setup the project</a></li>
+        <li><a href="#book-intro">Book Intro</a></li>
       </ul>
     </li>
   </ul>
