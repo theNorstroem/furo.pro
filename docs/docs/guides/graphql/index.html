@@ -5,15 +5,19 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack #   eBook: https://github.com/theNorstroem/todo-management-tool/blob/main/eBook.pdf Repository: https://github.com/theNorstroem/todo-management-tool Furo Web Stack: https://furo.pro/  Foreword #  Hi! This guide is intended to simplify the introduction to the FURO Web Stack. The tutorial is based on a realistic story. You will explore:
- API Design with Eclipse Furo Furo Web Stack (https://furo.pro/) Go programming language (grpc backend) How to expose REST via gRPC Gateway Flow based programming Web Components (custom elements, shadow DOM, HTML templates, https://developer.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="eBook Tutorial" />
-<meta property="og:description" content="Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack #   eBook: https://github.com/theNorstroem/todo-management-tool/blob/main/eBook.pdf Repository: https://github.com/theNorstroem/todo-management-tool Furo Web Stack: https://furo.pro/  Foreword #  Hi! This guide is intended to simplify the introduction to the FURO Web Stack. The tutorial is based on a realistic story. You will explore:
- API Design with Eclipse Furo Furo Web Stack (https://furo.pro/) Go programming language (grpc backend) How to expose REST via gRPC Gateway Flow based programming Web Components (custom elements, shadow DOM, HTML templates, https://developer." />
+<meta name="description" content="How to expose a GraphQL API from furo-specs #  Furo does not produce GraphQL directly.
+Furo produces proto files. From the proto you have to generate a grpc-gateway and the OAS specs.
+The final step is to use IBMs openapi-to-graphql or if you just want an instant server to test something the openapi-to-graphql-cli.
+➔ ➔ Example Request #  collection entity ">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="GraphQL" />
+<meta property="og:description" content="How to expose a GraphQL API from furo-specs #  Furo does not produce GraphQL directly.
+Furo produces proto files. From the proto you have to generate a grpc-gateway and the OAS specs.
+The final step is to use IBMs openapi-to-graphql or if you just want an instant server to test something the openapi-to-graphql-cli.
+➔ ➔ Example Request #  collection entity " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://furo.pro/docs/guides/ebook-tutorial/" />
+<meta property="og:url" content="http://furo.pro/docs/guides/graphql/" />
 <meta property="article:modified_time" content="2021-12-23T12:31:45+01:00" />
-<title>eBook Tutorial | フロー Furo</title>
+<title>GraphQL | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
@@ -126,7 +130,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/guides/ebook-tutorial/" class=" active">eBook Tutorial</a>
+    <a href="http://furo.pro/docs/guides/ebook-tutorial/" class="">eBook Tutorial</a>
   
 
         </li>
@@ -139,7 +143,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://furo.pro/docs/guides/graphql/" class="">GraphQL</a>
+    <a href="http://furo.pro/docs/guides/graphql/" class=" active">GraphQL</a>
   
 
         </li>
@@ -486,7 +490,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>eBook Tutorial</strong>
+  <strong>GraphQL</strong>
 
   <label for="toc-control">
     
@@ -501,12 +505,9 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#creating-an-enterprise-flavoured-todo-application-from-scratch-with-the-furo-web-stack">Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack</a>
+    <li><a href="#how-to-expose-a-graphql-api-from-furo-specs">How to expose a GraphQL API from furo-specs</a>
       <ul>
-        <li><a href="#foreword">Foreword</a></li>
-        <li><a href="#getting-started">Getting Started</a></li>
-        <li><a href="#setup-the-project">Setup the project</a></li>
-        <li><a href="#book-intro">Book Intro</a></li>
+        <li><a href="#example-request">Example Request</a></li>
       </ul>
     </li>
   </ul>
@@ -520,55 +521,32 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="creating-an-enterprise-flavoured-todo-application-from-scratch-with-the-furo-web-stack">
-  Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack
-  <a class="anchor" href="#creating-an-enterprise-flavoured-todo-application-from-scratch-with-the-furo-web-stack">#</a>
+  <article class="markdown"><h1 id="how-to-expose-a-graphql-api-from-furo-specs">
+  How to expose a GraphQL API from furo-specs
+  <a class="anchor" href="#how-to-expose-a-graphql-api-from-furo-specs">#</a>
 </h1>
-<ul>
-<li><em>eBook</em>: <a href="https://github.com/theNorstroem/todo-management-tool/blob/main/eBook.pdf">https://github.com/theNorstroem/todo-management-tool/blob/main/eBook.pdf</a></li>
-<li><em>Repository</em>: <a href="https://github.com/theNorstroem/todo-management-tool">https://github.com/theNorstroem/todo-management-tool</a></li>
-<li><em>Furo Web Stack</em>: <a href="https://furo.pro/">https://furo.pro/</a></li>
-</ul>
-<h2 id="foreword">
-  Foreword
-  <a class="anchor" href="#foreword">#</a>
+<p>Furo does not produce GraphQL directly.</p>
+<p>Furo produces <code>proto</code> files. From the <code>proto</code> you have to generate a 
+  <a href="https://grpc-ecosystem.github.io/grpc-gateway/"><strong>grpc-gateway</strong></a>
+and the 
+  <a href="https://www.openapis.org/"><strong>OAS</strong></a> specs.</p>
+<p>The final step is to use IBMs 
+  <a href="https://github.com/IBM/openapi-to-graphql">openapi-to-graphql</a> or
+if you just want an instant server to test something the 
+  <a href="https://github.com/IBM/openapi-to-graphql/tree/master/packages/openapi-to-graphql-cli">openapi-to-graphql-cli</a>.</p>
+<img src="/grpcio-ar21.svg" style="width: 120px;">
+<span style="font-size: 80px; color:#999999">➔</span>
+<img src="/openapis-icon.svg" style="width: 60px">
+<span style="font-size: 80px; color:#999999">➔</span>
+<img src="/graphQL.svg" style="width: 60px">
+<h2 id="example-request">
+  Example Request
+  <a class="anchor" href="#example-request">#</a>
 </h2>
-<p>Hi!
-This guide is intended to simplify the introduction to the FURO Web Stack. The tutorial is
-based on a realistic story. You will explore:</p>
-<ul>
-<li>API Design with Eclipse Furo</li>
-<li>Furo Web Stack (<a href="https://furo.pro/">https://furo.pro/</a>)</li>
-<li>Go programming language (grpc backend)</li>
-<li>How to expose REST via gRPC Gateway</li>
-<li>Flow based programming</li>
-<li>Web Components (custom elements, shadow DOM, HTML templates,
-<a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">https://developer.mozilla.org/en-US/docs/Web/Web_Components</a>)</li>
-</ul>
-<h2 id="getting-started">
-  Getting Started
-  <a class="anchor" href="#getting-started">#</a>
-</h2>
-<p>We recommend 2+ years of programming experience in JavaScript / HTML / CSS and a basic knowledge of Protocol Buffers. Experiences in Go is also a plus. But don’t worry, you don’t have to be an expert.</p>
-<p>Complete 
-  <a href="https://tour.golang.org/basics/1">the free 17 lectures</a> of A Tour Of Go2 to get familiar with the syntax and basic
-concepts.</p>
-<h2 id="setup-the-project">
-  Setup the project
-  <a class="anchor" href="#setup-the-project">#</a>
-</h2>
-<p>Visit the Furo ToDo Github repository and follow the installation instructions.
-<a href="https://github.com/theNorstroem/todo-management-tool">https://github.com/theNorstroem/todo-management-tool</a></p>
-<h2 id="book-intro">
-  Book Intro
-  <a class="anchor" href="#book-intro">#</a>
-</h2>
-<p>The book guides you along a story through the functions of Eclipse Furo.
-Please check out the GitHub branch for the corresponding chapter.
-A checkout is marked with the</p>
-<pre><code>&gt;_ git checkout ...
-</code></pre>
-<p>sign.</p>
+<p><em>collection</em>
+<img src="/collection.png" ></p>
+<p><em>entity</em>
+<img src="/entity.png" ></p>
 </article>
  
       
@@ -609,12 +587,9 @@ A checkout is marked with the</p>
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#creating-an-enterprise-flavoured-todo-application-from-scratch-with-the-furo-web-stack">Creating an enterprise-flavoured ToDo application from scratch with the Furo Web Stack</a>
+    <li><a href="#how-to-expose-a-graphql-api-from-furo-specs">How to expose a GraphQL API from furo-specs</a>
       <ul>
-        <li><a href="#foreword">Foreword</a></li>
-        <li><a href="#getting-started">Getting Started</a></li>
-        <li><a href="#setup-the-project">Setup the project</a></li>
-        <li><a href="#book-intro">Book Intro</a></li>
+        <li><a href="#example-request">Example Request</a></li>
       </ul>
     </li>
   </ul>

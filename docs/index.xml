@@ -136,6 +136,18 @@ chain of furo commands  mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxW
     </item>
     
     <item>
+      <title>GraphQL</title>
+      <link>http://furo.pro/docs/guides/graphql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://furo.pro/docs/guides/graphql/</guid>
+      <description>How to expose a GraphQL API from furo-specs #  Furo does not produce GraphQL directly.
+Furo produces proto files. From the proto you have to generate a grpc-gateway and the OAS specs.
+The final step is to use IBMs openapi-to-graphql or if you just want an instant server to test something the openapi-to-graphql-cli.
+➔ ➔ Example Request #  collection entity </description>
+    </item>
+    
+    <item>
       <title>Working with Dependencies</title>
       <link>http://furo.pro/docs/dependencies/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -155,6 +167,16 @@ By running furo install the dependency will be added to the configured directory
       <description>furo checkImports #  This command will check and correct all the needed imports in the specs. These imports are needed for creating proper proto files.
 If a import can not be resolved, you will get a error message which tells you the file and the field which is causing the problem.
 How does the import resolving work? #  Furo will look up for type definitions as close as possible to your type (most local to least local).</description>
+    </item>
+    
+    <item>
+      <title>Well known Base Types</title>
+      <link>http://furo.pro/docs/basetypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://furo.pro/docs/basetypes/</guid>
+      <description>Known types free of charge #  The github.com:theNorstroem/furoBaseSpecs contain ready-made type specifications such as BigDecimal, Reference and much more.
+Type Listing #   Furo types  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/furo   Furo Annotated Types (FAT)  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/furo/fat   Google api  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/google/api   Google rpc  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/google/rpc   Google protobuf  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/google/protobuf   Google type  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/google/type    Usage #  In the chapter Working with Dependencies you will see how to install the base types.</description>
     </item>
     
     <item>

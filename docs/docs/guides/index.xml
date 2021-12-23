@@ -26,5 +26,17 @@ In this guide we will setup a furo spec project with the furo init command. The 
  API Design with Eclipse Furo Furo Web Stack (https://furo.pro/) Go programming language (grpc backend) How to expose REST via gRPC Gateway Flow based programming Web Components (custom elements, shadow DOM, HTML templates, https://developer.</description>
     </item>
     
+    <item>
+      <title>GraphQL</title>
+      <link>http://furo.pro/docs/guides/graphql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://furo.pro/docs/guides/graphql/</guid>
+      <description>How to expose a GraphQL API from furo-specs #  Furo does not produce GraphQL directly.
+Furo produces proto files. From the proto you have to generate a grpc-gateway and the OAS specs.
+The final step is to use IBMs openapi-to-graphql or if you just want an instant server to test something the openapi-to-graphql-cli.
+➔ ➔ Example Request #  collection entity </description>
+    </item>
+    
   </channel>
 </rss>

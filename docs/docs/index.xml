@@ -60,5 +60,15 @@ Note: A installable dependency must be reachable by your git command.  Install a
 By running furo install the dependency will be added to the configured directory in your project.</description>
     </item>
     
+    <item>
+      <title>Well known Base Types</title>
+      <link>http://furo.pro/docs/basetypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://furo.pro/docs/basetypes/</guid>
+      <description>Known types free of charge #  The github.com:theNorstroem/furoBaseSpecs contain ready-made type specifications such as BigDecimal, Reference and much more.
+Type Listing #   Furo types  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/furo   Furo Annotated Types (FAT)  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/furo/fat   Google api  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/google/api   Google rpc  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/google/rpc   Google protobuf  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/google/protobuf   Google type  https://github.com/theNorstroem/furoBaseSpecs/tree/master/specs/google/type    Usage #  In the chapter Working with Dependencies you will see how to install the base types.</description>
+    </item>
+    
   </channel>
 </rss>
