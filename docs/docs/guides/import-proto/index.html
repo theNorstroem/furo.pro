@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to import proto files to µSpecs or Specs #  We offer 2 different ways to import specs from proto.
+ protoc-gen-furo-specs which will generate specs protoc-gen-furo-muspecs which will generate muspecs  The steps for any of these two generators are the same. This document describes the import process for *.proto to µSpecs.
+&nbsp;➔&nbsp; フロー µSpecs  mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph TD Protoc(Proto)-- protoc-gen-furo-spec -- Spec Protoc -- protoc-gen-furo-muspec -- µSpec µSpec(µSpec) Spec(Spec) µSpec-.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Import protos" />
+<meta property="og:description" content="How to import proto files to µSpecs or Specs #  We offer 2 different ways to import specs from proto.
+ protoc-gen-furo-specs which will generate specs protoc-gen-furo-muspecs which will generate muspecs  The steps for any of these two generators are the same. This document describes the import process for *.proto to µSpecs.
+&nbsp;➔&nbsp; フロー µSpecs  mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph TD Protoc(Proto)-- protoc-gen-furo-spec -- Spec Protoc -- protoc-gen-furo-muspec -- µSpec µSpec(µSpec) Spec(Spec) µSpec-." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://furo.pro/docs/guides/import-proto/" />
+<meta property="article:modified_time" content="2022-01-13T12:46:53+01:00" />
+<title>Import protos | フロー Furo</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
+<script defer src="/en.search.min.5ce083c7a0723a95afb012cb51348a426d99a675ff91f5de0acdb22c25e762fd.js" integrity="sha256-XOCDx6ByOpWvsBLLUTSKQm2ZpnX/kfXeCs2yLCXnYv0="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <div ></div>
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>フロー Furo</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/installation/" class="">Installation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/overview/" class="">Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-64d0ac0e8a385a6091d238dd382da7cf" class="toggle" checked />
+    <label for="section-64d0ac0e8a385a6091d238dd382da7cf" class="flex justify-between">
+      <a  class="">Guides</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/guides/quickstart/" class="">Quickstart Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/guides/ebook-tutorial/" class="">eBook Tutorial</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/guides/import-proto/" class=" active">Import protos</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/guides/graphql/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/configuration/" class="">Project Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/flow/" class="">Working with Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/dependencies/" class="">Working with Dependencies</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/basetypes/" class="">Well known Base Types</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3fb225060dbc6eb1fda04fb19c520b9e" class="toggle"  />
+    <label for="section-3fb225060dbc6eb1fda04fb19c520b9e" class="flex justify-between">
+      <a href="http://furo.pro/docs/commands/" class="">Commands</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_help-command/" class="">help</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_install/" class="">install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_run/" class="">run</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_muSpec2Spec/" class="">muSpec2Spec</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_checkImports/" class="">checkImports</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_exportAsYaml/" class="">exportAsYaml</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_genMessageProtos/" class="">genMessageProtos</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_genServiceProtos/" class="">genServiceProtos</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_genEsModule/" class="">genEsModule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_muSrvSanitize/" class="">muSrvSanitize</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/commands/furo_spec2muSpec/" class="">spec2muSpec</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/sourceoftruth/" class="">Source of Truth</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a432bb056edf769c9f15f6893988f152" class="toggle"  />
+    <label for="section-a432bb056edf769c9f15f6893988f152" class="flex justify-between">
+      <a href="http://furo.pro/docs/tools/" class="">Additional Tools</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://furo.pro/docs/tools/BEC/" class="">B E C</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/eclipse/eclipsefuro" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Import protos</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-import-proto-files-to-µspecs-or-specs">How to import proto files to µSpecs or Specs</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#proto-config-options">Proto Config Options</a></li>
+        <li><a href="#define-the-buf-template">Define the buf template</a></li>
+        <li><a href="#example-script-to-import-protos-from-a-folder">Example script to import protos from a folder</a></li>
+        <li><a href="#add-the-script-to-your-flow">Add the script to your flow</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="how-to-import-proto-files-to-µspecs-or-specs">
+  How to import proto files to µSpecs or Specs
+  <a class="anchor" href="#how-to-import-proto-files-to-%c2%b5specs-or-specs">#</a>
+</h1>
+<p>We offer 2 different ways to import specs from proto.</p>
+<ul>
+<li><code>protoc-gen-furo-specs</code> which will generate specs</li>
+<li><code>protoc-gen-furo-muspecs</code> which will generate muspecs</li>
+</ul>
+<p>The steps for any of these two generators are the same.
+This document describes the import process for *.proto to µSpecs.</p>
+<img src="/protologo.png" style="width: 100px;">
+<span style="font-size: 80px; color:#999999">&nbsp;➔&nbsp;</span>
+<span style="font-size: 50px; color:#333333">フロー µSpecs</span>
+
+
+<script src="/mermaid.min.js"></script>
+
+  <script>mermaid.initialize({
+  "flowchart": {
+    "useMaxWidth":true
+  },
+  "theme": "default"
+}
+)</script>
+
+
+
+
+<p class="mermaid">
+graph TD
+Protoc(Proto)-- protoc-gen-furo-spec --> Spec
+Protoc -- protoc-gen-furo-muspec --> µSpec
+µSpec(µSpec)
+Spec(Spec)
+µSpec-. furo .->Spec
+Spec-. furo .->µSpec
+Spec-. furo .->Proto
+</p>
+
+<blockquote class="book-hint danger">
+  <strong>Note:</strong> <code>ENUM</code> types and <code>additional bindings</code> are not supported at the moment
+</blockquote>
+
+<h2 id="installation">
+  Installation
+  <a class="anchor" href="#installation">#</a>
+</h2>
+<p>To install the latest <code>protoc-gen-furo-muspecs</code> generator, just type:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go install github.com/eclipse/eclipsefuro/protoc-gen-furo-muspecs
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="proto-config-options">
+  Proto Config Options
+  <a class="anchor" href="#proto-config-options">#</a>
+</h2>
+<p>The only option you can set, is the <strong>exclude</strong> option.
+It will accept a regex which will not generate the matching file names.</p>
+<p>Add the plugin to your buf config and define the output directory.</p>
+<h2 id="define-the-buf-template">
+  Define the buf template
+  <a class="anchor" href="#define-the-buf-template">#</a>
+</h2>
+<p>If you are not familiar with buf, 
+  <a href="https://docs.buf.build/introduction">read more about buf here.</a></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">version</span>:<span style="color:#bbb"> </span>v1beta1<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">plugins</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>furo-muspecs<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">out</span>:<span style="color:#bbb"> </span>dist/muspecs    <span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><p><em>buf.protoimport.yaml</em></p>
+<h2 id="example-script-to-import-protos-from-a-folder">
+  Example script to import protos from a folder
+  <a class="anchor" href="#example-script-to-import-protos-from-a-folder">#</a>
+</h2>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-weight:bold;font-style:italic">#!/usr/bin/env bash
+</span><span style="color:#999;font-weight:bold;font-style:italic"></span><span style="color:#998;font-style:italic"># exit when any command fails</span>
+<span style="color:#0086b3">set</span> -e
+
+buf generate --template ./buf.protoimport.yaml --path <span style="color:#000;font-weight:bold">$(</span>find sourceprotos/ -type d | grep sourceprotos/<span style="color:#000;font-weight:bold">[</span>^$<span style="color:#000;font-weight:bold">]</span> | tr <span style="color:#d14">&#39;\n&#39;</span> , | sed <span style="color:#d14">&#39;s/.$//&#39;</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><em>scripts/import_proto.sh</em></p>
+<h2 id="add-the-script-to-your-flow">
+  Add the script to your flow
+  <a class="anchor" href="#add-the-script-to-your-flow">#</a>
+</h2>
+<p>If you want to use the proto files as source of truth, consider to add the import script to your flow config.
+And add it to your default flow</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">commands</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#camelCase is not allowed, command scripts can only be executed from a flow</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">gen_transcoder</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/gprcgateway/generate.sh&#34;</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># shell script to generate a half grpc gateway</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">buf_generate</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/buf_generate.sh&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">buf_braking</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/buf_breaking.sh&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">import_proto</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;./scripts/import_proto.sh&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">flows</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">default</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#we choose µSpec as source https://fidl.furo.pro/docs/sourceoftruth/#%C2%B5spec-as-source</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- deprecated<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- import_proto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- muSpec2Spec<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- checkImports<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- genMessageProtos<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- genServiceProtos<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- buf_generate<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><p><em>.furo</em></p>
+<p>For more details, take a look in to the 
+  <a href="https://github.com/eclipse/eclipsefuro/tree/main/protoc-gen-furo-muspecs/sample">sample</a> to see a complete example.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/085a45cd07acd659381d92e47c44d019230587c0" title='Last modified by veith | January 13, 2022' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>January 13, 2022</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-import-proto-files-to-µspecs-or-specs">How to import proto files to µSpecs or Specs</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#proto-config-options">Proto Config Options</a></li>
+        <li><a href="#define-the-buf-template">Define the buf template</a></li>
+        <li><a href="#example-script-to-import-protos-from-a-folder">Example script to import protos from a folder</a></li>
+        <li><a href="#add-the-script-to-your-flow">Add the script to your flow</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
