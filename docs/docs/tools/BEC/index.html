@@ -6,18 +6,18 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="フロー furoBEC #  The furo build essentials container. #  This container contains all tools you need to work with a furo spec project.
-Usage #  Bash mode #  1 2 3 4  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit   Command mode #  Starting your container with the arguments build or publish will execute the corresponding flow.">
+Usage #  Bash mode #  1 2 3 4  docker run -it --rm -v `pwd`:/specs -v ~/.ssh:/root/.ssh thenorstroem/furo-bec # do your stuff # type exit to quit exit   Command mode #  Starting your container with the arguments build or publish will execute the corresponding flow.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="B E C" />
 <meta property="og:description" content="フロー furoBEC #  The furo build essentials container. #  This container contains all tools you need to work with a furo spec project.
-Usage #  Bash mode #  1 2 3 4  docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit   Command mode #  Starting your container with the arguments build or publish will execute the corresponding flow." />
+Usage #  Bash mode #  1 2 3 4  docker run -it --rm -v `pwd`:/specs -v ~/.ssh:/root/.ssh thenorstroem/furo-bec # do your stuff # type exit to quit exit   Command mode #  Starting your container with the arguments build or publish will execute the corresponding flow." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://furo.pro/docs/tools/BEC/" />
-<meta property="article:modified_time" content="2022-01-13T14:19:50+01:00" />
+<meta property="article:modified_time" content="2022-02-01T15:46:45+01:00" />
 <title>B E C | フロー Furo</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.9fc29a849079ed99ed43c9984bd308279cfb98eb186e733db04f8085ceb02916.js" integrity="sha256-n8KahJB57ZntQ8mYS9MIJ5z7mOsYbnM9sE&#43;Ahc6wKRY="></script>
+<script defer src="/en.search.min.6bc3bcecb734429c2dde99bb321f443c9bb82f0c3728dd7b4d5ddeaaf94928d9.js" integrity="sha256-a8O87Lc0Qpwt3pm7Mh9EPJu4Lww3KN17TV3eqvlJKNk="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -567,7 +567,7 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it --rm -v <span style="color:#d14">`</span><span style="color:#0086b3">pwd</span><span style="color:#d14">`</span>:/specs thenorstroem/furo-bec
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it --rm -v <span style="color:#d14">`</span><span style="color:#0086b3">pwd</span><span style="color:#d14">`</span>:/specs -v ~/.ssh:/root/.ssh thenorstroem/furo-bec
 <span style="color:#998;font-style:italic"># do your stuff</span>
 <span style="color:#998;font-style:italic"># type exit to quit</span>
 <span style="color:#0086b3">exit</span>
@@ -583,7 +583,7 @@ https://github.com/alex-shpak/hugo-book
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it --rm -v <span style="color:#d14">`</span><span style="color:#0086b3">pwd</span><span style="color:#d14">`</span>:/specs thenorstroem/furo-bec build
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it --rm -v <span style="color:#d14">`</span><span style="color:#0086b3">pwd</span><span style="color:#d14">`</span>:/specs -v ~/.ssh:/root/.ssh thenorstroem/furo-bec build
 </code></pre></td></tr></table>
 </div>
 </div><blockquote class="book-hint Info">
@@ -662,9 +662,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/e572a2214a4c38c7d258bd3967821242affa4e6e" title='Last modified by veith | January 13, 2022' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/furo/documentation/commit/58288f3b26344bf65c0bb722dc8293ff2a823c51" title='Last modified by veith | February 1, 2022' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>January 13, 2022</span>
+      <span>February 1, 2022</span>
     </a>
   </div>
 
